@@ -1,0 +1,230 @@
+<main class="bg_gray">
+    <div class="container margin_30">
+        <div class="page_header">
+            <!-- <div class="breadcrumbs">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li>Page active</li>
+            </ul>
+        </div> -->
+            <h1>Giỏ Hàng </h1>
+        </div>
+        <!-- /page_header -->
+        <table class="table table-striped cart-list">
+            <thead>
+                <tr>
+                    <th>
+                        Sản Phẩm
+                    </th>
+                    <th>
+                        Giá
+                    </th>
+                    <th>
+                        Số lượng
+                    </th>
+                    <th>
+                        Số tiền
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="thumb_cart">
+                            <img src="../assets/img/thumbnail/casual.png" data-src="../assets/img/thumbnail/casual.png"
+                                class="lazy" alt="Image">
+                        </div>
+                        <span class="item_cart">Áo Phông Phiền "Nhiễu"</span>
+                    </td>
+                    <td>
+                        <strong>₫140.000</strong>
+                    </td>
+                    <td>
+                        <div class="numbers-row">
+                            <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
+                            <div class="inc button_inc">+</div>
+                            <div class="dec button_inc">-</div>
+                        </div>
+                    </td>
+                    <td>
+                        <strong>₫140.000</strong>
+                    </td>
+                    <td class="options">
+                        <a href="#"><i class="ti-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row add_top_30 flex-sm-row-reverse cart_actions">
+            <div class="col-sm-4 text-right">
+                <button type="button" class="btn_1 gray">Cập nhật giỏ hàng</button>
+            </div>
+            <div class="col-sm-8">
+                <div class="apply-coupon">
+                    <div class="form-group form-inline">
+                        <input type="text" name="coupon-code" value="" placeholder="Nhập mã giảm giá"
+                            class="form-control"><button type="button" class="btn_1 outline">Áp dụng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /cart_actions -->
+
+    </div>
+    <!-- /container -->
+    
+
+
+
+    <div class="box_cart">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <ul>
+                        <li>
+                            <span>Tổng tiền hàng</span> ₫140.000
+                        </li>
+                        <li>
+                            <span>Phí vận chuyển </span> ₫10.000
+                        </li>
+                        <li>
+                            <span>Tổng thanh toán</span> ₫150.000
+                        </li>
+                    </ul>
+                    <a href="cart-2.html" class="btn_1 full-width cart">Mua Hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /box_cart -->
+
+    <div class="container margin_30">
+		<div class="page_header">
+			<!-- <div class="breadcrumbs">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Category</a></li>
+					<li>Page active</li>
+				</ul>
+		</div> -->
+		<h1>Thanh toán </h1>
+			
+	</div>
+	<!-- /page_header -->
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="step first">
+						<h3>1. Thông tin khách hàng</h3>
+					<div class="tab-content checkout">
+						<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
+							<div class="row no-gutters">
+								<div class="col-6 form-group pr-1">
+									<input type="text" class="form-control" placeholder="Họ">
+								</div>
+								<div class="col-6 form-group pl-1">
+									<input type="text" class="form-control" placeholder="Tên">
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Địa chỉ">
+							</div>
+
+							<!-- /row -->
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Số điện thoại">
+							</div>
+							<hr>
+						</div>
+						<!-- /tab_1 -->
+
+					</div>
+					</div>
+					<!-- /step -->
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="step middle payments">
+						<h3>2. Phương thức thanh toán và vận chuyển</h3>
+							<ul>
+								<li>
+									<label class="container_radio">Thẻ tín dụng/Ghi nợ<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<input type="radio" name="payment" checked>
+										<span class="checkmark"></span>
+									</label>
+								</li>
+								<li>
+									<label class="container_radio">Ví Momo<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<input type="radio" name="payment">
+										<span class="checkmark"></span>
+									</label>
+								</li>
+								<li>
+									<label class="container_radio">Thanh toán tiền mặt khi nhận hàng<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<input type="radio" name="payment">
+										<span class="checkmark"></span>
+									</label>
+								</li>
+							</ul>
+							<div class="payment_info d-none d-sm-block"><figure><img src="../assets/img/cards_all.svg" alt=""></figure></div>
+							
+							<h6 class="pb-2">Phương thức vận chuyển</h6>
+							
+						
+						<ul>
+								<li>
+									<label class="container_radio">Giao hàng tiêu chuẩn<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<input type="radio" name="shipping" checked>
+										<span class="checkmark"></span>
+									</label>
+								</li>
+								<li>
+									<label class="container_radio">Giao hàng nhanh<a href="#0" class="info" data-toggle="modal" data-target="#payments_method"></a>
+										<input type="radio" name="shipping">
+										<span class="checkmark"></span>
+									</label>
+								</li>
+								
+							</ul>
+						
+					</div>
+					<!-- /step -->
+					
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="step last">
+						<h3>3. Đơn hàng</h3>
+					<div class="box_general summary">
+						<ul>
+							<li class="clearfix"><em>Áo phông Phiền Nhiễu</em>  <span>₫140.000</span></li>
+						</ul>
+						<ul>
+							<li class="clearfix"><em><strong>Tổng tiền hàng</strong></em>  <span>₫140.000</span></li>
+							<li class="clearfix"><em><strong>Phí vận chuyển</strong></em> <span>₫10.000</span></li>
+							
+						</ul>
+						<div class="total clearfix">TỔNG THANH TOÁN <span>₫150.00</span></div>
+						<div class="form-group">
+								<label class="container_check">Đồng ý theo Điều khoản TheWeekdays
+								  <input type="checkbox" checked>
+								  <span class="checkmark"></span>
+								</label>
+							</div>
+						
+						<a href="confirm.html" class="btn_1 full-width" [routerLink]="['/confirmorder']">Đặt hàng</a>
+					</div>
+					<!-- /box_general -->
+					</div>
+					<!-- /step -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+
+</main>
+<!--/main-->
