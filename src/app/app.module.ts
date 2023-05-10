@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,6 +15,8 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
 import { CartComponent } from './cart/cart.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { FormatService } from 'src/service/format.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,13 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    FormatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
