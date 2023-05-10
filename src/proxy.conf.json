@@ -1,0 +1,16 @@
+[
+  {
+    "context": ["/v1"],
+    "target": "https://api.theweekdays.live",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  {
+    "context": ["/mlv1"],
+    "target": "https://ml.theweekdays.live",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+]

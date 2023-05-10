@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "sign", component: SignComponent },
   { path: "listgrid", component: ListingGridComponent },
   { path: "listrow", component: ListRowComponent },
-  { path: "detail", component: ProductDetailComponent },
+  { path: "product/:id", component: ProductDetailComponent },
   { path: "cart", component: CartComponent },
   { path: "confirmorder", component:ConfirmOrderComponent},
   { path: "order", component: TrackingOrderComponent},
