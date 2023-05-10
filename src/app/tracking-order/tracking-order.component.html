@@ -1,1 +1,145 @@
-<!-- tìm thêm tìm thêm -->
+<main class="bg_gray">
+  <div class="container margin_30">
+    <div class="page_header">
+      <div class="breadcrumbs">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Order</a></li>
+          <li>All</li>
+        </ul>
+      </div>
+      <h1>Cart page</h1>
+      <div class="card">
+        <ul class="nav justify-content-center">
+          <li class="nav-item process-li position-relative">
+            <div style="padding: auto; width: fit-content;">
+              <a class="nav-link selected" href="#">All</a>
+            </div>
+          </li>
+          <li class="nav-item process-li">
+            <div style="margin: auto; width: fit-content;">
+              <a class="nav-link" href="#">Ordered</a>
+            </div>
+          </li>
+          <li class="nav-item process-li">
+            <a class="nav-link" href="#">Processing</a>
+          </li>
+          <li class="nav-item process-li">
+            <a class="nav-link" href="#">Delivering</a>
+          </li>
+          <li class="nav-item process-li">
+            <a class="nav-link" href="#">Completed</a>
+          </li>
+          <li class="nav-item process-li">
+            <a class="nav-link" href="#">Cancelled</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="order-card"  [routerLink]="['/order/id']">
+      <!--Status-->
+      <div class="container overflow-hidden">
+        <div class="row gx-10">
+          <div class="col">
+            <div class="border bg-light">
+              <p>Order 6viqu452vfde61vw8g6</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="border bg-light">
+              <div class="position-relative">
+                <p class="delivering position-absolute top-0 end-0">Delivering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Status-->
+
+      <div class="d-flex position-relative mb-0">
+        <img src="{{src}}" style="width: 100px; height: 100px;object-fit: cover;" class="flex-shrink-0 me-3" alt="...">
+        <div>
+          <h5 class="mt-0 me-3">Đây là một cái tên sản phẩm rất dài để cái card trông như đang được thiết kế một cách
+            thông
+            minh (về mặt diện tích)</h5>
+          <p class="info">Size: XL</p>
+          <p class="info">Số lượng: x2</p>
+        </div>
+        <div>
+          <p class="orginal-price" style="text-decoration: line-through;">20.000.000VND</p>
+          <p>20.000.000VND</p>
+        </div>
+      </div>
+      <hr>
+      <div class="d-flex position-relative mb-0">
+        <img src="{{src}}" style="width: 100px; height: 100px;object-fit: cover;" class="flex-shrink-0 me-3" alt="...">
+        <div>
+          <h5 class="mt-0 me-3">Đây là một cái tên sản phẩm rất dài để cái card trông như đang được thiết kế một cách
+            thông
+            minh (về mặt diện tích)</h5>
+          <p class="info">Size: XL</p>
+          <p class="info">Số lượng: x2</p>
+        </div>
+        <div>
+          <p class="orginal-price" style="text-decoration: line-through;">20.000.000VND</p>
+          <p>20.000.000VND</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row position-relative" style="height: 30px; padding: 0px; margin: 0px;">
+        <p class="total position-absolute top-0 end-0" style="width: fit-content;">Thành tiền: 40000000</p>
+      </div>
+    </div>
+    <div class=" order-card">
+      <!--Status-->
+      <div class="container overflow-hidden">
+        <div class="row gx-10">
+          <div class="col">
+            <div class="border bg-light">
+              <p>Order 6viqu452vfde61vw8g6</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="border bg-light">
+              <div class="position-relative">
+                <p class="cancelled position-absolute top-0 end-0">Cancelled</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Status-->
+      <div class="d-flex position-relative mb-0" [routerLink]="['/order/id']">
+        <img src="{{src}}" style="width: 100px; height: 100px;object-fit: cover;" class="flex-shrink-0 me-3" alt="...">
+        <div>
+          <h5 class="mt-0 me-3">Đây là một cái tên sản phẩm rất dài để cái card trông như đang được thiết kế một cách
+            thông
+            minh (về mặt diện tích)</h5>
+          <p class="info">Size: XL</p>
+          <p class="info">Số lượng: x2</p>
+        </div>
+        <div>
+          <p class="orginal-price" style="text-decoration: line-through;">20.000.000VND</p>
+          <p>20.000.000VND</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row position-relative" style="height: 30px; padding: 0px; margin: 0px;">
+        <p class="total position-absolute top-0 end-0" style="width: fit-content;">Thành tiền: 40000000</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!--/main-->
+
+<footer>
+  <div class="container">
+
+    <!-- /row-->
+    <hr>
+
+  </div>
+</footer>

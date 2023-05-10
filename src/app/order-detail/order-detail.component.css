@@ -1,0 +1,75 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import 'src/assets/css/listing.css';
+@import 'src/assets/css/product_page.css';
+@import 'src/assets/css/account.css';
+@import 'src/assets/css/checkout.css';
+@import 'src/assets/css/cart.css';
+@import 'src/assets/css/custom.css';
+
+
+.right
+{
+  text-align: right;
+  padding-right: 10px;
+}
+
+.left
+{
+  text-align: left;
+  padding: 0px 10px 0px 0px;
+}
+
+.paid
+{
+  background-color: green;
+  color: white;
+  margin-left: 10px;
+}
+
+.delivering
+{
+  background-color: yellow;
+  color: black;
+  width: fit-content;
+}
+
+.progress-card:hover
+{
+  stroke: blue;
+  cursor: pointer;
+  border: 2px solid blue;
+  color: blue;
+}
+
+.progress-card:hover small
+{
+  color: black;
+}
+.progress-card small
+{
+  color: gray;
+}
+
+
+.order-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  height: fit-content;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+

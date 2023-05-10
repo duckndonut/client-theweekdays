@@ -7,6 +7,8 @@ import { ListRowComponent } from './listing-row/listing-row.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: "listrow", component: ListRowComponent },
   { path: "detail", component: ProductDetailComponent },
   { path: "cart", component: CartComponent },
-  { path: "confirmorder", component:ConfirmOrderComponent}
+  { path: "confirmorder", component:ConfirmOrderComponent},
+  { path: "order", component: TrackingOrderComponent},
+  { path: "order/id", component: OrderDetailComponent} // khi đổ dữ liệu về thì chuyển thành order/:id
 ];
 
 @NgModule({
