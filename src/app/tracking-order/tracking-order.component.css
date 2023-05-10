@@ -1,0 +1,92 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@import 'src/assets/css/cart.css';
+@import 'src/assets/css/style.css';
+
+
+.process-li {
+  background-color: white;
+  color: black;
+  width: fit-content;
+  height: fit-content
+};
+
+.process-li:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.process-li:hover a {
+  color: black;
+  text-decoration: underline;
+  background-color: rgb(255, 234, 0);
+}
+
+.process-li a {
+  align-items: center;
+  height: 35px;
+  width: 120px;
+  text-align: center;
+}
+
+.order-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  height: fit-content;
+}
+
+.info {
+  color: gray;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.delivering {
+  background-color: rgb(255, 234, 0);
+  color: black;
+  width: fit-content;
+}
+
+.ordered {
+  background-color: gray(255, 234, 0);
+  color: black;
+  width: fit-content;
+}
+
+.processing {
+  background-color: blue;
+  color: white;
+  width: fit-content;
+}
+
+.completed {
+  background-color: green;
+  color: white;
+  width: fit-content;
+}
+
+.cancelled {
+  background-color: red;
+  color: white;
+  width: fit-content;
+}
+
