@@ -1,215 +1,247 @@
-
 <body>
-	
-	<div id="page" class="theia-exception">
-	<main>
-		<div class="top_banner">
-			<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
-				<div class="container">
 
-					<h1>Tất cả áo</h1>
-                    <h5 style="color: #fff;">Chọn từ nhiều màu sắc và kiểu dáng, <br>dễ phối phiều phong cách ăn mặc riêng.</h5>
-				</div>
-			</div>
-			<img src="https://cdn.shopify.com/s/files/1/0456/8825/8724/files/FG7_denim_007.jpg" class="img-fluid" alt="">
-		</div>
-		<!-- /top_banner -->
-			<div id="stick_here"></div>		
-			<div class="toolbox elemento_stick">
-				<div class="container">
-				<ul class="clearfix">
-					<li>
-						<div class="sort_select">
-							<select name="sort" id="sort">
-                                    <option value="popularity" selected="selected">Sắp xếp theo: Phổ biến</option>
-                                    <option value="rating">Đánh giá trung bình</option>
-                                    <option value="date">Sản phẩm mới nhất</option>
-                                    <option value="price">Giá thấp đến cao</option>
-                                    <option value="price-desc">Giá cao đến thấp</option>
-							</select>
-						</div>
-					</li>
-					<li>
-						<a [routerLink]="['/listgrid']"><i class="ti-view-grid"></i></a>
-						<a href="listing-row-1-sidebar-left.html"><i class="ti-view-list"></i></a>
-					</li>
-					<li>
-						<a href="#0" class="open_filters">
-							<i class="ti-filter"></i><span>Filters</span>
-						</a>
-					</li>
-				</ul>
-				</div>
-			</div>
-			<!-- /toolbox -->
-			
-			<div class="container margin_30">
-			
-			<div class="row">
-				<aside class="col-lg-3" id="sidebar_fixed">
-				    <div class="filter_col">
-				        <div class="inner_bt"><a href="#" class="open_filters"><i class="ti-close"></i></a></div>
-				        <div class="filter_type version_2">
-				            <h4><a href="#filter_1" data-toggle="collapse" class="closed">Danh mục</a></h4>
-				            <div class="collapse" id="filter_1">
-				                <ul>
-				                    <li>
-				                        <label class="container_check">Áo Sơmi <small>12</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Áo Khoác <small>24</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Áo Polo <small>23</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Áo Thun <small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-									<li>
-				                        <label class="container_check">Quần Tây <small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-									<li>
-				                        <label class="container_check">Quần Short <small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-									<li>
-				                        <label class="container_check"> Quần Jeans<small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-									<li>
-				                        <label class="container_check">Quần Kaki <small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                </ul>
-				            </div>
-				            <!-- /filter_type -->
-				        </div>
-				        <!-- /filter_type -->
-				        <div class="filter_type version_2">
-				            <h4><a href="#filter_2" data-toggle="collapse" class="closed">Màu sắc</a></h4>
-				            <div class="collapse" id="filter_2">
-				                <ul>
-				                    <li>
-				                        <label class="container_check">Xanh <small>06</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Trắng <small>12</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Đen <small>17</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Be <small>43</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                </ul>
-				            </div>
-				        </div>
-				        <!-- /filter_type -->
-				        <div class="filter_type version_2">
-				            <h4><a href="#filter_3" data-toggle="collapse" class="closed">Bộ sưu tập</a></h4>
-				            <div class="collapse" id="filter_3">
-				                <ul>
-				                    <li>
-				                        <label class="container_check">Minimalist <small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Urban Street <small>08</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Casual Wear <small>05</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">Vinatge <small>18</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                </ul>
-				            </div>
-				        </div>
-				        <!-- /filter_type -->
-				        <div class="filter_type version_2">
-				            <h4><a href="#filter_4" data-toggle="collapse" class="closed">Giá</a></h4>
-				            <div class="collapse" id="filter_4">
-				                <ul>
-				                    <li>
-				                        <label class="container_check">₫0 — ₫150.000<small>11</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">₫150.000 — ₫300.000<small>08</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">₫300.000 — ₫500.000<small>05</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                    <li>
-				                        <label class="container_check">₫500.000 — ₫700.000<small>18</small>
-				                            <input type="checkbox">
-				                            <span class="checkmark"></span>
-				                        </label>
-				                    </li>
-				                </ul>
-				            </div>
-				        </div>
-				        <!-- /filter_type -->
-				        <div class="buttons">
-				            <a href="#0" class="btn_1">Lọc</a> <a href="#0" class="btn_1 gray">Làm mới</a>
-				        </div>
-				    </div>
-				</aside>
-				<!-- /col -->
-				<div class="col-lg-9">
-	                <div class="row row_item">
+  <div id="page" class="theia-exception">
+    <main>
+      <div class="top_banner">
+        <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+          <div class="container">
+            <h1>{{ui.label_all_products}}</h1>
+            <h5 style="color: #fff;">{{ui.label_productpage_header_description_1}}<br>{{ui.label_productpage_header_description_2}}</h5>
+          </div>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0456/8825/8724/files/FG7_denim_007.jpg" class="img-fluid" alt="">
+      </div>
+      <!-- /top_banner -->
+      <div id="stick_here"></div>
+      <div class="toolbox elemento_stick">
+        <div class="container">
+          <ul class="clearfix">
+            <li>
+              <div class="sort_select">
+                <select name="sort" id="sort">
+                  <option value="popularity" selected="selected">{{ui.label_sort_by}}: {{ui.label_sort_by_popularity}}</option>
+                  <option value="rating">{{ui.label_sort_by_rating}}</option>
+                  <option value="date">{{ui.label_sort_by_newness}}</option>
+                  <option value="price">{{ui.label_sort_by_price}}</option>
+                  <option value="price-desc">{{ui.label_sort_by_price_desc}}</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <a [routerLink]="['/listgrid']"><i class="ti-view-grid"></i></a>
+              <a href="listing-row-1-sidebar-left.html"><i class="ti-view-list"></i></a>
+            </li>
+            <li>
+              <a href="#0" class="open_filters">
+                <i class="ti-filter"></i><span>Filters</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /toolbox -->
+
+      <div class="container margin_30">
+
+        <div class="row">
+          <aside class="col-lg-3" id="sidebar_fixed">
+            <div class="filter_col">
+              <div class="inner_bt"><a href="#" class="open_filters"><i class="ti-close"></i></a></div>
+              <div class="filter_type version_2">
+                <h4><a href="#filter_1" data-toggle="collapse" class="closed">{{ui.category}}</a></h4>
+                <div class="collapse" id="filter_1">
+                  <ul>
+                    <li>
+                      <label class="container_check">Áo Sơmi <small>12</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Áo Khoác <small>24</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Áo Polo <small>23</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Áo Thun <small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Quần Tây <small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Quần Short <small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check"> Quần Jeans<small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Quần Kaki <small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /filter_type -->
+              </div>
+              <!-- /filter_type -->
+              <div class="filter_type version_2">
+                <h4><a href="#filter_2" data-toggle="collapse" class="closed">{{ui.size}}</a></h4>
+                <div class="collapse" id="filter_2">
+                  <ul>
+                    <li>
+                      <label class="container_check">Xanh <small>06</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Trắng <small>12</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Đen <small>17</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Be <small>43</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /filter_type -->
+              <div class="filter_type version_2">
+                <h4><a href="#filter_3" data-toggle="collapse" class="closed">{{ui.collection}}</a></h4>
+                <div class="collapse" id="filter_3">
+                  <ul>
+                    <li>
+                      <label class="container_check">Minimalist <small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Urban Street <small>08</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Casual Wear <small>05</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">Vinatge <small>18</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /filter_type -->
+              <div class="filter_type version_2">
+                <h4><a href="#filter_4" data-toggle="collapse" class="closed">{{ui.price}}</a></h4>
+                <div class="collapse" id="filter_4">
+                  <ul>
+                    <li>
+                      <label class="container_check">₫0 — ₫150.000<small>11</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">₫150.000 — ₫300.000<small>08</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">₫300.000 — ₫500.000<small>05</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="container_check">₫500.000 — ₫700.000<small>18</small>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /filter_type -->
+              <div class="buttons">
+                <a href="#0" class="btn_1">{{ui.filter}}</a> &nbsp;<a href="#0" class="btn_1 gray">{{ui.refresh}}</a>
+              </div>
+            </div>
+          </aside>
+          <!-- /col -->
+          <div class="col-lg-9">
+            <div class="row row_item" *ngFor="let p of product_slides">
+              <div class="col-sm-4">
+                <figure>
+                  <span class="ribbon off">- {{p.sale_percent}} %</span>
+                  <a [routerLink]="['/product/',p._id]">
+                    <img class="img-fluid lazy" src="{{p.image}}" alt="" style="object-fit: cover; height: 15em;">
+                  </a>
+                  <!-- <div data-countdown="2019/05/15" class="countdown"></div> -->
+                </figure>
+              </div>
+              <div class="col-sm-8">
+                <div class="rating">
+                  <i *ngFor="let star of [].constructor(p.floorRating())" class="icon-star voted"></i>
+                  <i *ngFor="let star of [].constructor(5 - p.floorRating())" class="icon-star"></i>
+                </div>
+                <a [routerLink]="['/product/',p._id]">
+                  <h3>{{p.name}}</h3>
+                </a>
+                <p>{{p.excerpt}}</p>
+                <div class="price_box">
+                  <span class="new_price">{{_format.formatCurrency(p.price)}}</span>
+                  &nbsp;
+                  <span class="old_price">{{_format.formatCurrency(p.original_price)}}</span>
+                </div>
+                <ul>
+                  <li><a href="#0" class="btn_1">{{ui.add_to_cart}}</a></li>
+                  <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top"
+                      title="{{ui.placeholder_add_to_favorite}}"><i
+                        class="ti-heart"></i><span>{{ui.add_to_favorite}}</span></a></li>
+                  <!-- <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- /row_item -->
+            <!-- <div class="row row_item">
 	                    <div class="col-sm-4">
 	                        <figure>
 	                            <span class="ribbon off">-30%</span>
@@ -232,12 +264,12 @@
 	                        <ul>
 	                            <li><a href="#0" class="btn_1">Thêm vào giỏ hàng</a></li>
 	                            <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Thích quá rùi nà"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <!-- <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
+	                            <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
 	                        </ul>
 	                    </div>
-	                </div>
-	                <!-- /row_item -->
-                    <div class="row row_item">
+	                </div> -->
+            <!-- /row_item -->
+            <!-- <div class="row row_item">
 	                    <div class="col-sm-4">
 	                        <figure>
 	                            <span class="ribbon off">-30%</span>
@@ -260,71 +292,34 @@
 	                        <ul>
 	                            <li><a href="#0" class="btn_1">Thêm vào giỏ hàng</a></li>
 	                            <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Thích quá rùi nà"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <!-- <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
+	                            <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
 	                        </ul>
 	                    </div>
-	                </div>
-	                <!-- /row_item -->
-                    <div class="row row_item">
-	                    <div class="col-sm-4">
-	                        <figure>
-	                            <span class="ribbon off">-30%</span>
-	                            <a href="product-detail-1.html">
-                                    <img class="img-fluid lazy" src="https://down-vn.img.susercontent.com/file/63a10a77e768f1ca41d792b2488c5860_tn" alt="">
-	                            </a>
-	                            <div data-countdown="2019/05/15" class="countdown"></div>
-	                        </figure>
-	                    </div>
-	                    <div class="col-sm-8">
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-                                <h3>Áo phông thun Phiền "Nhiễu"</h3>
-	                        </a>
-	                        <p>Áo phông thun Phiền "Nhiễu" nhiều khi không nhiễu cũng khá phiền...</p>
-	                        <div class="price_box">
-	                            <span class="new_price">₫329.000</span>
-	                            <span class="old_price">₫330.000</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="btn_1">Thêm vào giỏ hàng</a></li>
-	                            <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Thích quá rùi nà"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <!-- <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-	                        </ul>
-	                    </div>
-	                </div>
-	                <!-- /row_item -->
-					<div class="pagination__wrapper">
-						<ul class="pagination">
-							<li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
-							<li>
-								<a href="#0" class="active">1</a>
-							</li>
-							<li>
-								<a href="#0">2</a>
-							</li>
-							<li>
-								<a href="#0">3</a>
-							</li>
-							<li>
-								<a href="#0">4</a>
-							</li>
-							<li><a href="#0" class="next" title="next page">&#10095;</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /col -->
-			</div>
-			<!-- /row -->			
-				
-		</div>
-		<!-- /container -->
-	</main>
-	<!-- /main -->
-	
-	
-	</div>
-	<!-- page -->
-	
-	<div id="toTop"></div><!-- Back to top button -->
-	
+	                </div> -->
+            <!-- /row_item -->
+            <div class="pagination__wrapper">
+              <ul class="pagination">
+                <li><a (click)="previousPage()" class="prev" title="previous page">&#10094;</a></li>
+                <li *ngFor="let pagenumber of generatePageNumberArray(pages)">
+                  <a (click)="changePage(pagenumber)" class="{{activePage(pagenumber)}}">{{pagenumber}}</a>
+                </li>
+                <li><a (click)="nextPage()" class="next" title="next page">&#10095;</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+
+      </div>
+      <!-- /container -->
+    </main>
+    <!-- /main -->
+
+
+  </div>
+  <!-- page -->
+
+  <div id="toTop"></div><!-- Back to top button -->
+
 </body>
