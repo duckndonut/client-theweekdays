@@ -133,6 +133,8 @@ export const Vietnamese = {
   fail_delete: 'Xóa thất bại',
   success_add: 'Thêm thành công',
   fail_add: 'Thêm thất bại',
+  success_added_to_cart: 'Đã thêm vào giỏ hàng',
+  fail_added_to_cart: 'Thêm vào giỏ hàng thất bại',
   success_update_status: 'Cập nhật trạng thái thành công',
   status_repeat: 'Trạng thái đã tồn tại',
   selected: 'Đã chọn',

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +18,8 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { FormatService } from 'src/service/format.service';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { ProductService } from 'src/service/product.service';
 
 @NgModule({
   declarations: [
@@ -37,10 +40,19 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-right',
+      progressBar: true,
+      preventDuplicates: true,
+      closeButton: true,
+    })
   ],
   providers: [
-    FormatService
+    FormatService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

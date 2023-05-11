@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Product, ProductDetails } from 'src/model/product.model';
 import { FormatService } from 'src/service/format.service';
 import { ProductService } from 'src/service/product.service';
@@ -18,7 +19,7 @@ export class ProductDetailComponent {
   quantity: number = 1;
   recommend_products: Product[] = [];
 
-  constructor(private _productservice: ProductService, public _format: FormatService, private _activerouter: ActivatedRoute, private _router: Router ) {
+  constructor(public _productservice: ProductService, public _format: FormatService, private _activerouter: ActivatedRoute, private _router: Router, private _toastr: ToastrService ) {
     this._activerouter.params.subscribe(params => {
       this.product_id = params['id'];
       if (this.product_id == null || this.product_id == undefined || this.product_id == '') {
@@ -69,44 +70,6 @@ export class ProductDetailComponent {
         console.log(err);
       }
     });
-  }
-
-  // Add product to cart []
-  // {
-  //   "_id": "5f9d88b9c3b9d3b1d4b3e0b1",
-  //   "variants" : "S",
-  //   "quantity": 3
-  // }
-  addToCart(product_id: string, selectedVariant: string, quantity: number) {
-    let cart: any[] = [];
-    selectedVariant = selectedVariant.toUpperCase();
-    quantity = Number(quantity);
-    product_id = product_id.toString();
-
-    if (localStorage.getItem('cart')) {
-      cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    }
-
-    // if product variant is already in cart, update quantity
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i]._id == product_id && cart[i].variants == selectedVariant) {
-        cart[i].quantity += quantity;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        // TOAST HERE
-        return;
-      }
-    }
-
-    // if product variant is not in cart, add new product to cart
-    let product = {
-      "_id": product_id,
-      "variants": selectedVariant,
-      "quantity": quantity
-    }
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    // TOAST HERE
-    return;
   }
 
   increase() {

@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { Product, ProductDetails } from 'src/model/product.model';
+import { FormatService } from './format.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,9 @@ export class ProductService {
     'Content-Type': 'text/plain; charset=utf-8'
   });
 
-  constructor(private _http: HttpClient) {
+  private ui = this._format.useLanguage();
+
+  constructor(private _http: HttpClient, private _toastr: ToastrService, private _format: FormatService) {
     if (localStorage.getItem('token')) {
       this.applicationHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
     }
@@ -49,5 +53,50 @@ export class ProductService {
   // error handling
   handleError(error: HttpErrorResponse) {
     return throwError(() => new Error(error.message))
+  }
+
+  // Add product to cart []
+  // {
+  //   "_id": "5f9d88b9c3b9d3b1d4b3e0b1",
+  //   "variants" : "S",
+  //   "quantity": 3
+  // }
+  // add product to cart local storage
+  addToCart(product_id: string, selectedVariant: string, quantity: number, event: MouseEvent) {
+    event.stopPropagation();
+    let cart: any[] = [];
+    selectedVariant = selectedVariant.toUpperCase();
+    quantity = Number(quantity);
+    product_id = product_id.toString();
+
+    if (product_id == null || product_id == undefined || product_id == '' || selectedVariant == null || selectedVariant == undefined || selectedVariant == '' || quantity == null || quantity == undefined || quantity == 0) {
+      this._toastr.error(this.ui.fail_added_to_cart, this.ui.fail_add);
+      return;
+    }
+
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart') || '{}');
+    }
+
+    // if product variant is already in cart, update quantity
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i]._id == product_id && cart[i].variants == selectedVariant) {
+        cart[i].quantity += quantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        this._toastr.success(this.ui.success_added_to_cart, this.ui.success_add);
+        return;
+      }
+    }
+
+    // if product variant is not in cart, add new product to cart
+    let product = {
+      "_id": product_id,
+      "variants": selectedVariant,
+      "quantity": quantity
+    }
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    this._toastr.success(this.ui.success_added_to_cart, this.ui.success_add);
+    return;
   }
 }
