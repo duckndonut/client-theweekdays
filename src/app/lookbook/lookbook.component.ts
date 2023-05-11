@@ -8,24 +8,28 @@ import { ProductService } from 'src/service/product.service';
 import { Collection } from 'src/model/collection.model';
 
 @Component({
-  selector: 'app-collection-detail',
-  templateUrl: './collection-detail.component.html',
-  styleUrls: ['./collection-detail.component.css']
+  selector: 'app-lookbook',
+  templateUrl: './lookbook.component.html',
+  styleUrls: ['./lookbook.component.css']
 })
-export class CollectionDetailComponent {
+export class LookbookComponent {
   id: any;
   collection: any;
   products: any[] = [];
   listProducts: any;
   target: any = "";
   videoURL: any;
+  lookbook: any;
+  index:any;
   constructor(private _service: CollectionService, private route: ActivatedRoute, private router: Router, private _title: Title, public _format: FormatService, private productService: ProductService, private sanitizer: DomSanitizer) {
     this._title.setTitle("Collection");
-    this.id = this.route.snapshot.paramMap.get('id');
+    const urlParams = new URLSearchParams(window.location.search);
+    this.id = urlParams.get('collection');
+    this.index = urlParams.get('index');
     this._service.getCollectionById(this.id).subscribe(
       (data: any) => {
         this.collection = data;
-        this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + data.videoId + '?rel=0&playlist=' + data.videoId + '&loop=1&version=3&autoplay=1&controls=0&&showinfo=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&mute=1');
+        this.lookbook = data.lookbook[this.index]
       },
       (error) => {
         console.log(error);
@@ -38,7 +42,7 @@ export class CollectionDetailComponent {
     );
   }
 
-  getCollectionById(id: string) {
+  getCollectionById() {
     this._service.getCollectionById(this.id).subscribe(
       (data: any) => {
         this.collection = data;

@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { CollectionComponent } from './collection/collection.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
+import { LookbookComponent } from './lookbook/lookbook.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CollectionDetailComponent } from './collection-detail/collection-detail
     OrderDetailComponent,
     CollectionComponent,
     AboutUsComponent,
-    CollectionDetailComponent
+    CollectionDetailComponent,
+    LookbookComponent
   ],
   imports: [
     BrowserModule,
