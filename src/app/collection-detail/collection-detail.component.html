@@ -1,0 +1,26 @@
+<div class="col-md-12 position-fixed">
+  <iframe style="pointer-events: none;" class="position-fixed top-0 start-0 background" [src]="videoURL" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+<div class="main " style="margin-top:550px;">
+  <div style="background-color: white; ">
+    <div class="container" style="margin-right: auto; margin-left: auto; width: fit-content;">
+      <div class="main_title" style="padding-top: 40PX;">
+        <h2>{{collection.name}}</h2>
+        <span style="margin-top: 20px;">look good everyday</span>
+      </div>
+      <div [innerHTML]="collection.description"
+        style="margin-left: auto;margin-right: auto; width: fit-content; padding-bottom: 30px;">
+      </div>
+      <div class="row mb-3 align-items-start"
+        style="margin-left: auto;margin-right: auto; width: fit-content; padding-bottom: 50px;">
+        <a class="col-3 mt-md-4" style="min-width: 300px;width: 25%; height: 350px; object-fit: cover; margin: auto;" *ngFor="let l of collection.lookbook, , let index = index"
+          href="/lookbook?collection={{collection._id}}&index={{index}}">
+          <img [src]="l.image"
+          style="min-width: 300px;width: 25%; height: 350px; object-fit: cover; margin: auto;" >
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

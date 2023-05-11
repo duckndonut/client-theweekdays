@@ -1,0 +1,17 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.product:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.product {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  margin-bottom: 10px;
+}

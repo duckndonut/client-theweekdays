@@ -1,4 +1,11 @@
-<div class="main" style="background-color: white;">
+<div class="main container" style="background-color: white;">
+  <div class="breadcrumbs">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Category</a></li>
+      <li>Page active</li>
+    </ul>
+  </div>
   <div class="container margin_60_35">
     <div class="main_title">
       <h2>Bộ sưu tập mới</h2>
@@ -7,19 +14,19 @@
     </div>
     <div class="row small-gutters categories_grid">
       <div class="col-md-6">
-        <a href="listing-grid-1-full.html">
+        <a [routerLink]="['/collection/',highlightedCollection[0]._id]">
           <img src="{{highlightedCollection[0].image}}" style="height: 500px; width: 100%; object-fit: cover;" alt=""
             class="img-fluid lazy">
           <div class="wrapper">
-            <h2>{{highlightedCollection[1].name}}</h2>
-            <p>{{highlightedCollection[1].createdDate | date:"dd/MM/yyyy"}}</p>
+            <h2>{{highlightedCollection[0].name}}</h2>
+            <p>{{highlightedCollection[0].createdDate | date:"dd/MM/yyyy"}}</p>
           </div>
         </a>
       </div>
       <div class="col-sm-12 col-md-6">
         <div class="row small-gutters mt-md-0 mt-sm-2">
           <div class="col-sm-6">
-            <a href="listing-grid-1-full.html">
+            <a  [routerLink]="['/collection/',highlightedCollection[1]._id]">
               <img src="{{highlightedCollection[1].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -29,7 +36,7 @@
             </a>
           </div>
           <div class="col-sm-6">
-            <a href="listing-grid-1-full.html">
+            <a  [routerLink]="['/collection/',highlightedCollection[2]._id]">
               <img src="{{highlightedCollection[2].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -41,7 +48,7 @@
         </div>
         <div class="row small-gutters mt-md-3 mt-sm-3">
           <div class="col-sm-6">
-            <a href="listing-grid-1-full.html">
+            <a  [routerLink]="['/collection/',highlightedCollection[3]._id]">
               <img src="{{highlightedCollection[3].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -51,7 +58,7 @@
             </a>
           </div>
           <div class="col-sm-6">
-            <a href="listing-grid-1-full.html">
+            <a  [routerLink]="['/collection/',highlightedCollection[4]._id]">
               <img src="{{highlightedCollection[4].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -82,7 +89,7 @@
       <div class="col-sm-12 col-md-12">
         <div class="row small-gutters mt-md-2 mt-sm-2 center">
           <div class="col-sm-3 mt-sm-3" *ngFor="let collection of normalCollection">
-            <a href="listing-grid-1-full.html">
+            <a [routerLink]="['/collection/',collection._id]">
               <img src="{{collection.image}}" data-src="assets/img/img_cat_home_2.jpg" alt="" class="img-fluid lazy">
               <div class="wrapper">
                 <h2>{{collection.name}}</h2>
