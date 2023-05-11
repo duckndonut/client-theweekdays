@@ -18,6 +18,7 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { FormatService } from 'src/service/format.service';
 import { FormsModule } from '@angular/forms';
 import { CollectionComponent } from './collection/collection.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CollectionComponent } from './collection/collection.component';
     CartComponent,
     ConfirmOrderComponent,
     OrderDetailComponent,
-    CollectionComponent
+    CollectionComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
