@@ -104,7 +104,8 @@
                             </div> -->
               <div class="col-xl-4 col-lg-5 col-md-6 col-6">
                 <div class="numbers-row">
-                  <input type="text" value="{{quantity}}" id="quantity_1" class="qty2" name="quantity_1" [(ngModel)]="quantity">
+                  <input type="text" value="{{quantity}}" id="quantity_1" class="qty2" name="quantity_1"
+                    [(ngModel)]="quantity">
                   <div class="inc button_inc" (click)="increase()">+</div>
                   <div class="dec button_inc" (click)="decrease()">-</div>
                 </div>
@@ -120,7 +121,9 @@
                   class="old_price">{{_format.formatCurrency(product.original_price)}}</span></div>
             </div>
             <div class="col-lg-5 col-md-6">
-              <div class="btn_add_to_cart"><a (click)="addToCart(product._id, selected_variant, quantity)" class="btn_1">{{ui.add_to_cart}}</a></div>
+              <div class="btn_add_to_cart"><a
+                  (click)="_productservice.addToCart(product._id, selected_variant, quantity, $event)"
+                  class="btn_1">{{ui.add_to_cart}}</a></div>
             </div>
           </div>
         </div>
@@ -332,7 +335,8 @@
     <div class="container margin_60_35">
 
       <div class="row small-gutters">
-        <div class="col-6 col-md-4 col-xl-3" *ngFor="let rc_product of recommend_products" [routerLink]="['/product/',rc_product._id]">
+        <div class="col-6 col-md-4 col-xl-3" *ngFor="let rc_product of recommend_products"
+          [routerLink]="['/product/',rc_product._id]">
           <div class="grid_item">
             <figure>
               <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
@@ -355,11 +359,17 @@
               <span class="old_price">{{_format.formatCurrency(rc_product.original_price)}}</span>
             </div>
             <ul>
-              <li><a [routerLink]="['/product/', rc_product._id]" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="{{ui.placeholder_add_to_favorite}}"><i
+              <li><a [routerLink]="['/product/', rc_product._id]" class="tooltip-1" data-toggle="tooltip"
+                  data-placement="left" title="{{ui.placeholder_add_to_favorite}}"><i
                     class="ti-heart"></i><span>{{ui.placeholder_add_to_favorite}}</span></a></li>
               <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-              <li><a [routerLink]="['/product/', rc_product._id]" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                  title="{{ui.add_to_cart}}"><i class="ti-shopping-cart"></i><span>{{ui.add_to_cart}}</span></a></li>
+              <li>
+                <a (click)="_productservice.addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1" data-toggle="tooltip"
+                  data-placement="left" title="{{ui.add_to_cart}}">
+                  <i class="ti-shopping-cart"></i>
+                  <span>{{ui.add_to_cart}}</span>
+                </a>
+              </li>
             </ul>
           </div>
           <!-- /grid_item -->
