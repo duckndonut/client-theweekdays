@@ -17,6 +17,8 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { FormatService } from 'src/service/format.service';
 import { FormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     TrackingOrderComponent,
     CartComponent,
     ConfirmOrderComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
