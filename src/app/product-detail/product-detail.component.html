@@ -338,14 +338,21 @@
         <div class="col-6 col-md-4 col-xl-3" *ngFor="let rc_product of recommend_products"
           [routerLink]="['/product/',rc_product._id]">
           <div class="grid_item">
-            <figure>
-              <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
+            <figure style="height: 20em; width: 20em;">
+              <!-- <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
               <a class="photo">
                 <img class="img-fluid lazy" src="{{ rc_product.image }}" alt="">
                 <img class="img-fluid lazy"
                   src="https://i.pinimg.com/564x/e0/e3/32/e0e3327d4d038dda1696619de128e0e2.jpg" alt="">
-              </a>
+              </a> -->
               <!-- <div data-countdown="2019/05/15" class="countdown"></div> -->
+
+              <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
+              <a >
+                <img class="img-fluid lazy" src="{{ rc_product.image }}" alt="">
+                <img class="img-fluid lazy"
+                  src="https://i.pinimg.com/564x/e0/e3/32/e0e3327d4d038dda1696619de128e0e2.jpg" alt="" >
+              </a>
             </figure>
             <div class="rating">
               <i *ngFor="let star of [].constructor(rc_product.floorRating())" class="icon-star voted"></i>
@@ -364,8 +371,8 @@
                     class="ti-heart"></i><span>{{ui.placeholder_add_to_favorite}}</span></a></li>
               <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
               <li>
-                <a (click)="_productservice.addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1" data-toggle="tooltip"
-                  data-placement="left" title="{{ui.add_to_cart}}">
+                <a (click)="_productservice.addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1"
+                  data-toggle="tooltip" data-placement="left" title="{{ui.add_to_cart}}">
                   <i class="ti-shopping-cart"></i>
                   <span>{{ui.add_to_cart}}</span>
                 </a>
