@@ -12,7 +12,7 @@
         </div>
         <!-- /page_header -->
         <table class="table table-striped cart-list">
-            <thead>
+            <thead >
                 <tr>
                     <th>
                         Sản Phẩm
@@ -20,8 +20,11 @@
                     <th>
                         Giá
                     </th>
+					<th>
+						số lượng
+					</th>
                     <th>
-                        Số lượng
+                        Size
                     </th>
                     <th>
                         Số tiền
@@ -34,11 +37,11 @@
             <tbody>
                 <tr>
                     <td>
-                        <div class="thumb_cart">
+                        <div class="thumb_cart" style="height: 10em; width: 10em;">
                             <img src="../assets/img/thumbnail/casual.png" data-src="../assets/img/thumbnail/casual.png"
-                                class="lazy" alt="Image">
+                                class="lazy" alt="Image" style="height: 10em; width: 10em;">
                         </div>
-                        <span class="item_cart">Áo Phông Phiền "Nhiễu"</span>
+                        <span class="item_cart" style="text-align: left; font-size: large;">Áo Phông Phiền "Nhiễu"</span>
                     </td>
                     <td>
                         <strong>₫140.000</strong>
@@ -50,6 +53,15 @@
                             <div class="dec button_inc">-</div>
                         </div>
                     </td>
+					<td>
+							<select class="form-control" name="size">
+								<option value="XS">XS</option>
+								<option value="S">S</option>
+								<option value="M" selected>M</option>
+								<option value="L">L</option>
+								<option value="XL">XL</option>
+							</select>
+						</td>
                     <td>
                         <strong>₫140.000</strong>
                     </td>
