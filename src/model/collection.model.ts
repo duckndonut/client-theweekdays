@@ -6,6 +6,10 @@ export class Collection
   public createdDate:Date = new Date();
   public lookbook:lookbook[] = [];
 
+  constructor( data: any ) {
+    this.loadFromJSON(data);
+  }
+
   loadFromJSON(json:any):void
   {
     this._id = json._id || this._id;

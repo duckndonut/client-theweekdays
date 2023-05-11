@@ -1,0 +1,25 @@
+<main>
+  <h3 class="center" style="padding: 35px;">Lookbook</h3>
+  <div class="container">
+    <div class="row align-items-start" style="width: 100%;">
+      <div class="col">
+        <img [src]="lookbook.image" style="min-width: 280px;max-width: 100%; margin: auto;">
+      </div>
+      <div class="col">
+        <div class="container">
+          <div *ngFor="let p of listProducts" class="row align-items-start product" style="padding-top: 10px; padding-bottom: 10px; background-color: white;">
+            <div class="col-3" style="width: fit-content;">
+              <img [src]="p.image" style="width: 150px; height: 150px; object-fit: cover;">
+            </div>
+            <div class="col-4"style="width: 50%;">
+              <h5>
+               {{p.name}}
+              </h5>
+              <p>{{p.price}} VND</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
