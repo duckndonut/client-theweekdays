@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, retry, throwError } from 'rxjs';
-import { Product } from 'src/model/product.model';
+import { Product, ProductDetails } from 'src/model/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,19 @@ export class ProductService {
     }
     return this._http.get<any>('/v1/products', requestOptions).pipe(
       map(res => JSON.parse(res) as Product[]),
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
+  // Get product by id
+  getProductById(id: string): Observable<any> {
+    const requestOptions: Object = {
+      headers: this.textHeaders,
+      responseType: "text"
+    }
+    return this._http.get<any>('/v1/products/' + id, requestOptions).pipe(
+      map(res => JSON.parse(res) as ProductDetails),
       retry(2),
       catchError(this.handleError)
     );
