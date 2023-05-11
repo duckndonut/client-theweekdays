@@ -1,0 +1,101 @@
+<div class="main" style="background-color: white;">
+  <div class="container margin_60_35">
+    <div class="main_title">
+      <h2>Bộ sưu tập mới</h2>
+      <span>Đồ đẹp mới ra lò</span>
+      <p>Luôn bảnh bao cho dù ngày mưa hay nắng</p>
+    </div>
+    <div class="row small-gutters categories_grid">
+      <div class="col-md-6">
+        <a href="listing-grid-1-full.html">
+          <img src="{{highlightedCollection[0].image}}" style="height: 500px; width: 100%; object-fit: cover;" alt=""
+            class="img-fluid lazy">
+          <div class="wrapper">
+            <h2>{{highlightedCollection[1].name}}</h2>
+            <p>{{highlightedCollection[1].createdDate | date:"dd/MM/yyyy"}}</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="row small-gutters mt-md-0 mt-sm-2">
+          <div class="col-sm-6">
+            <a href="listing-grid-1-full.html">
+              <img src="{{highlightedCollection[1].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
+                class="img-fluid lazy">
+              <div class="wrapper">
+                <h2>{{highlightedCollection[1].name}}</h2>
+                <p>{{highlightedCollection[1].createdDate | date:"dd/MM/yyyy"}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a href="listing-grid-1-full.html">
+              <img src="{{highlightedCollection[2].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
+                class="img-fluid lazy">
+              <div class="wrapper">
+                <h2>{{highlightedCollection[2].name}}</h2>
+                <p>{{highlightedCollection[2].createdDate | date:"dd/MM/yyyy"}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row small-gutters mt-md-3 mt-sm-3">
+          <div class="col-sm-6">
+            <a href="listing-grid-1-full.html">
+              <img src="{{highlightedCollection[3].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
+                class="img-fluid lazy">
+              <div class="wrapper">
+                <h2>{{highlightedCollection[3].name}}</h2>
+                <p>{{highlightedCollection[3].createdDate | date:"dd/MM/yyyy"}}</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a href="listing-grid-1-full.html">
+              <img src="{{highlightedCollection[4].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
+                class="img-fluid lazy">
+              <div class="wrapper">
+                <h2>{{highlightedCollection[4].name}}</h2>
+                <p>{{highlightedCollection[4].createdDate | date:"dd/MM/yyyy"}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mt-md-3 row">
+        <div class="col-md-12 mt-md-3">
+          <div class="main_title mt-md-3">
+            <h2>Bộ sưu tập nổi bật</h2>
+            <span>Quẹo lựa quẹo lựa</span>
+            <p>Chưa biết mặc gì? Lựa một bộ thôi nào!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12">
+        <iframe width="100%" height="422" style="object-fit: cover; pointer-events: none;"
+          src="https://www.youtube.com/embed/kW4ku9IAGiQ?rel=0&playlist=kW4ku9IAGiQ&loop=1&version=3&autoplay=1&controls=0&&showinfo=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&mute=1&end=22"
+          title="ZARA MAN | Spring Summer 2021 Campaign" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <!--Bắt đầu dùng ngFor ở đây-->
+      <div class="col-sm-12 col-md-12">
+        <div class="row small-gutters mt-md-2 mt-sm-2 center">
+          <div class="col-sm-3 mt-sm-3" *ngFor="let collection of normalCollection">
+            <a href="listing-grid-1-full.html">
+              <img src="{{collection.image}}" data-src="assets/img/img_cat_home_2.jpg" alt="" class="img-fluid lazy">
+              <div class="wrapper">
+                <h2>{{collection.name}}</h2>
+                <p>{{collection.createdDate}}</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!--/categories_grid-->
+    </div>
+  </div>
+</div>

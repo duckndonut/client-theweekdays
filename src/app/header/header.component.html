@@ -59,7 +59,7 @@
 												<li><a [routerLink]="['/listgrid']">Quần Shorts</a></li>
 												<li><a [routerLink]="['/listgrid']">Quần xx</a></li>
 												<li><a [routerLink]="['/listgrid']">Quần xxx</a></li>
-												
+
 											</ul>
 										</div>
 										<div class="col-lg-3">
@@ -88,7 +88,7 @@
 								<!-- /menu-wrapper -->
 							</li>
 							<li class="submenu">
-								<a href="javascript:void(0);" class="show-submenu">Bộ sưu tập</a>
+								<a href="javascript:void(0);" class="show-submenu" [routerLink]="['/collection']">Bộ sưu tập</a>
 								<ul>
 									<li><a href="header-2.html">Minimalism</a></li>
 									<li><a href="header-3.html">Urban Stress</a></li>
@@ -107,7 +107,7 @@
 								<a href="blog.html">giảm giá</a>
 							</li>
 							<li>
-								<a href="#0">Về chúng tôi</a>
+								<a [routerLink]="['/aboutus']">Về chúng tôi</a>
 							</li>
 						</ul>
 					</div>
@@ -152,12 +152,12 @@
 											<a href="account.html"><i class="ti-user"></i>Thông tin tài khoản</a>
 										</li>
 										<li>
-											<a href="account.html"><i class="ti-package"></i>Đơn mua</a>
+											<a [routerLink]="['/order']"><i class="ti-package"></i>Đơn mua</a>
 										</li>
 										<li>
 											<a href="help.html"><i class="ti-help-alt"></i>Hỗ trợ</a>
 										</li>
-										
+
 									</ul>
 								</div>
 							</div>
@@ -166,7 +166,7 @@
 						<li>
 							<a class="search_panel"><span>Search</span></a>
 						</li>
-					
+
 					</ul>
 				</div>
 			</div>
@@ -181,7 +181,7 @@
 		<small>What are you looking for?</small>
 	</div>
 	<!-- /header_panel -->
-	
+
 	<div class="container">
 		<div class="search-input">
 				<input type="text" placeholder="Search over 10.000 products...">
@@ -193,4 +193,3 @@
 <!-- /search_panel -->
 
 
-	
