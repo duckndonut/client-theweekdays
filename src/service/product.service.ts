@@ -14,7 +14,11 @@ export class ProductService {
     'Content-Type': 'text/plain; charset=utf-8'
   });
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {
+    if (localStorage.getItem('token')) {
+      this.applicationHeaders.append('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    }
+  }
 
   // Get all products
   getAllProducts(): Observable<any> {

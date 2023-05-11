@@ -1,6 +1,6 @@
 <main>
   <div class="container margin_30">
-    <div class="countdown_inner">Chương trình giảm giá 20% sẽ kết thúc sau <div data-countdown="2019/05/15"
+    <div class="countdown_inner">Chương trình giảm giá 20% sẽ kết thúc sau.<div data-countdown="2019/05/15"
         class="countdown"></div>
     </div>
     <div class="row">
@@ -8,7 +8,7 @@
         <div class="all">
           <div class="slider">
             <div class="owl-carousel owl-theme main">
-              <div *ngFor="let img of product.image" class="item-box" style="background-image: url( {{img}} );"></div>
+              <!-- <div *ngFor="let img of product.image" class="item-box" style="background-image: url( {{img}} );"></div> -->
               <div
                 style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
                 class="item-box"></div>
@@ -30,9 +30,9 @@
           </div>
           <div class="slider-two">
             <div class="owl-carousel owl-theme thumbs">
-              <div *ngFor="let img of product.image" class="item" style="background-image: url( {{img}} );"></div>
+              <!-- <div *ngFor="let img of product.image" class="item" style="background-image: url( {{img}} );"></div> -->
               <div
-                style="background-image: url(https://down-vn.img.susercontent.com/file/cn-11134207-7qukw-lf4v2v7ws10pba_tn);"
+                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
                 class="item"></div>
               <div
                 style="background-image: url(https://down-vn.img.susercontent.com/file/f25bfcfc4d9665352db6914822522708_tn);"
@@ -68,7 +68,7 @@
               lượt đánh giá</em></span>
           <p><small>SKU: MTKRY-001</small><br>{{product.excerpt}}</p>
           <div class="prod_options">
-            <div class="row">
+            <!-- <div class="row">
               <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>{{ui.color}}</strong></label>
               <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
                 <ul>
@@ -78,14 +78,14 @@
                   <li><a href="#0" class="color color_4"></a></li>
                 </ul>
               </div>
-            </div>
+            </div> -->
             <div class="row">
               <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>{{ui.size}}</strong> - {{ui.table_size}} <a
                   href="#0" data-toggle="modal" data-target="#size-modal" title="{{ui.table_size}}"><i
                     class="ti-help-alt"></i></a></label>
               <div class="col-xl-4 col-lg-5 col-md-6 col-6">
                 <div class="custom-select-form">
-                  <select class="wide">
+                  <select class="wide" [(ngModel)]="selected_variant">
                     <option value="S" selected>Small (S)</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -104,9 +104,9 @@
                             </div> -->
               <div class="col-xl-4 col-lg-5 col-md-6 col-6">
                 <div class="numbers-row">
-                  <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
-                  <div class="inc button_inc">+</div>
-                  <div class="dec button_inc">-</div>
+                  <input type="text" value="{{quantity}}" id="quantity_1" class="qty2" name="quantity_1" [(ngModel)]="quantity">
+                  <div class="inc button_inc" (click)="increase()">+</div>
+                  <div class="dec button_inc" (click)="decrease()">-</div>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@
                   class="old_price">{{_format.formatCurrency(product.original_price)}}</span></div>
             </div>
             <div class="col-lg-5 col-md-6">
-              <div class="btn_add_to_cart"><a href="#0" class="btn_1">{{ui.add_to_cart}}</a></div>
+              <div class="btn_add_to_cart"><a (click)="addToCart(product._id, selected_variant, quantity)" class="btn_1">{{ui.add_to_cart}}</a></div>
             </div>
           </div>
         </div>
@@ -146,10 +146,10 @@
     <div class="container">
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Mô tả</a>
+          <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">{{ui.description}}</a>
         </li>
         <li class="nav-item">
-          <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Đánh giá</a>
+          <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">{{ui.rating}}</a>
         </li>
       </ul>
     </div>
@@ -171,31 +171,28 @@
             <div class="card-body">
               <div class="row justify-content-between">
                 <div class="col-lg-6">
-                  <h3>MÔ TẢ SẢN PHẨM</h3>
-                  <p>Gọi là Chê Track, vì trước đây tôi vẫn thường xuyên nghe những lời chê trách như những bài ca mỗi
-                    ngày. <strong>Tất nhiên chẳng dễ chịu gì</strong> và thú thật, hồi đó tôi vẫn âm thầm “mặc kệ chê
-                    trách” trong thâm tâm mình.</p>
-
+                  <h3>{{ui.product_description | uppercase }}</h3>
+                  <p>{{product.description}}</p>
                 </div>
                 <div class="col-lg-5">
-                  <h3>CHI TIẾT SẢN PHẨM</h3>
+                  <h3>{{ui.detail_product | uppercase}}</h3>
                   <div class="table-responsive">
                     <table class="table table-sm table-striped">
                       <tbody>
                         <tr>
-                          <td><strong>Màu sắc</strong></td>
+                          <td><strong>{{ui.color}}</strong></td>
                           <td>Trắng, Đen</td>
                         </tr>
                         <tr>
-                          <td><strong>Kích cỡ</strong></td>
-                          <td>150x100x100</td>
+                          <td><strong>{{ui.size}}</strong></td>
+                          <td>S, M, L, XL, XXL</td>
                         </tr>
                         <tr>
-                          <td><strong>Trọng lượng</strong></td>
+                          <td><strong>{{ui.weight}}</strong></td>
                           <td>0.6kg</td>
                         </tr>
                         <tr>
-                          <td><strong>Chất liệu</strong></td>
+                          <td><strong>{{ui.material}}</strong></td>
                           <td>Vải</td>
                         </tr>
                       </tbody>
@@ -280,7 +277,7 @@
                   <div class="write_review">
                     <div class="rating_submit">
                       <div class="form-group">
-                        <label class="d-block">Chất lượng sản phẩm</label>
+                        <label class="d-block">{{ui.product_quality}}</label>
                         <span class="rating mb-0">
                           <input type="radio" class="rating-input" id="5_star" name="rating-input"
                             value="5 Stars"><label for="5_star" class="rating-star"></label>
@@ -297,19 +294,19 @@
                     </div>
                     <!-- /rating_submit -->
                     <div class="form-group">
-                      <label>Tiêu đề</label>
+                      <label>{{ui.title}}</label>
                       <input class="form-control" type="text" placeholder="Thêm tiêu đề cho đánh giá của bạn">
                     </div>
                     <div class="form-group">
-                      <label>Đánh giá của bạn</label>
+                      <label>{{ui.your_review}}</label>
                       <textarea class="form-control" style="height: 180px;"
                         placeholder="Những đánh giá của bạn sẽ là bài học cho chúng tôi"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>Thêm hình ảnh</label>
+                      <label>{{ui.add_image}}</label>
                       <div class="fileupload"><input type="file" name="fileupload" accept="image/*"></div>
                     </div>
-                    <a href="confirm.html" class="btn_1">Submit review</a>
+                    <a href="confirm.html" class="btn_1">{{ui.submit_your_review}}</a>
                   </div>
                 </div>
               </div>
@@ -327,137 +324,42 @@
 
   <div class="container margin_60_35">
     <div class="main_title">
-      <h2>Gợi ý phối đồ từ The Weekdays</h2>
-      <span>Gợi ý phối đồ từ The Weekdays</span>
-      <p>Nhận ngay những gợi ý phối đồ thời trang sành điệu từ The Weekdays để tạo nên phong cách cá tính và độc đáo.
+      <h2>{{ui.product_suggestion}}</h2>
+      <span>{{ui.product_suggestion}}</span>
+      <p>{{ui.product_suggestion_description}}
       </p>
     </div>
     <div class="container margin_60_35">
 
       <div class="row small-gutters">
-        <div class="col-6 col-md-4 col-xl-3">
+        <div class="col-6 col-md-4 col-xl-3" *ngFor="let rc_product of recommend_products" [routerLink]="['/product/',rc_product._id]">
           <div class="grid_item">
             <figure>
-              <span class="ribbon off">-30%</span>
-              <a href="product-detail-1.html">
+              <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
+              <a class="photo">
+                <img class="img-fluid lazy" src="{{ rc_product.image }}" alt="">
                 <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/63a10a77e768f1ca41d792b2488c5860_tn" alt="">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/cn-11134207-7qukw-lf4v2v7ws10pba_tn"
-                  data-src="assets/img/products/shoes/1_b.jpg" alt="">
+                  src="https://i.pinimg.com/564x/e0/e3/32/e0e3327d4d038dda1696619de128e0e2.jpg" alt="">
               </a>
-              <div data-countdown="2019/05/15" class="countdown"></div>
+              <!-- <div data-countdown="2019/05/15" class="countdown"></div> -->
             </figure>
-            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-            <a href="product-detail-1.html">
-              <h3>Áo phông thun Phiền "Nhiễu"</h3>
+            <div class="rating">
+              <i *ngFor="let star of [].constructor(rc_product.floorRating())" class="icon-star voted"></i>
+              <i *ngFor="let star of [].constructor(5 - rc_product.floorRating())" class="icon-star"></i>
+            </div>
+            <a>
+              <h3>{{rc_product.name}}</h3>
             </a>
             <div class="price_box">
-              <span class="new_price">₫329.000</span>
-              <span class="old_price">₫330.000</span>
+              <span class="new_price">{{_format.formatCurrency(rc_product.price)}}</span>
+              <span class="old_price">{{_format.formatCurrency(rc_product.original_price)}}</span>
             </div>
             <ul>
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Thích quá rùi nà"><i
-                    class="ti-heart"></i><span>Thích quá rùi nà</span></a></li>
+              <li><a [routerLink]="['/product/', rc_product._id]" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="{{ui.placeholder_add_to_favorite}}"><i
+                    class="ti-heart"></i><span>{{ui.placeholder_add_to_favorite}}</span></a></li>
               <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                  title="Thêm vào giỏ hàng"><i class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a></li>
-            </ul>
-          </div>
-          <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-          <div class="grid_item">
-            <span class="ribbon off">-30%</span>
-            <figure>
-              <a href="product-detail-1.html">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/f25bfcfc4d9665352db6914822522708_tn" alt="">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/sg-11134201-7qvev-lft6o0dz9d1ff5_tn"
-                  data-src="img/products/shoes/2_b.jpg" alt="">
-              </a>
-              <div data-countdown="2019/05/10" class="countdown"></div>
-            </figure>
-            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-            <a href="product-detail-1.html">
-              <h3>Áo phông thun Sáng "Sủa"</h3>
-            </a>
-            <div class="price_box">
-              <span class="new_price">₫200.000</span>
-              <span class="old_price">₫250.000</span>
-            </div>
-            <ul>
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Thích quá rùi nà"><i
-                    class="ti-heart"></i><span>Thích quá rùi nà</span></a></li>
-              <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                  title="Thêm vào giỏ hàng"><i class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a></li>
-            </ul>
-          </div>
-          <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-          <div class="grid_item">
-            <span class="ribbon off">-50%</span>
-            <figure>
-              <a href="product-detail-1.html">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/c09e4f106f6f23d290c98dcdaa7c0cbe_tn" alt="">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/60f0f010d976eae7349ad4c6d5fc1fa3_tn" alt="">
-              </a>
-              <div data-countdown="2019/05/21" class="countdown"></div>
-            </figure>
-            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-            <a href="product-detail-1.html">
-              <h3>Áo phông thun Ngang "Ngược"</h3>
-            </a>
-            <div class="price_box">
-              <span class="new_price">₫200.000</span>
-              <span class="old_price">₫270.000</span>
-            </div>
-            <ul>
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Thích quá rùi nà"><i
-                    class="ti-heart"></i><span>Thích quá rùi nà</span></a></li>
-              <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                  title="Thêm vào giỏ hàng"><i class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a></li>
-            </ul>
-          </div>
-          <!-- /grid_item -->
-        </div>
-        <!-- /col -->
-        <div class="col-6 col-md-4 col-xl-3">
-          <div class="grid_item">
-            <span class="ribbon new">Mới</span>
-            <figure>
-              <a href="product-detail-1.html">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/f3322064cebb49adc742452ca249ccc9_tn" alt="">
-                <img class="img-fluid lazy"
-                  src="https://down-vn.img.susercontent.com/file/8931c6ec85d7520e509e92d74b890bb5_tn" alt="">
-              </a>
-            </figure>
-            <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-            <a href="product-detail-1.html">
-              <h3>Áo phông thun Chê "Track"</h3>
-            </a>
-            <div class="price_box">
-              <span class="new_price">₫200.000</span>
-            </div>
-            <ul>
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Thích quá rùi nà"><i
-                    class="ti-heart"></i><span>Thích quá rùi nà</span></a></li>
-              <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
-              <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-                  title="Thêm vào giỏ hàng"><i class="ti-shopping-cart"></i><span>Thêm vào giỏ hàng</span></a></li>
+              <li><a [routerLink]="['/product/', rc_product._id]" class="tooltip-1" data-toggle="tooltip" data-placement="left"
+                  title="{{ui.add_to_cart}}"><i class="ti-shopping-cart"></i><span>{{ui.add_to_cart}}</span></a></li>
             </ul>
           </div>
           <!-- /grid_item -->
@@ -476,8 +378,8 @@
           <div class="box">
             <i class="ti-gift"></i>
             <div class="justify-content-center">
-              <h3>Miễn Phí Vận Chuyển</h3>
-              <p>Cho đơn hàng từ 300.000VND</p>
+              <h3>{{ui.freeship}}</h3>
+              <p>{{ui.freeship_condition_description}}</p>
             </div>
           </div>
         </li>
@@ -485,8 +387,8 @@
           <div class="box">
             <i class="ti-wallet"></i>
             <div class="justify-content-center">
-              <h3>Thanh toán tiện lợi</h3>
-              <p>100% Thanh toán bảo mật</p>
+              <h3>{{ui.checkout_conviniently}}</h3>
+              <p>{{ui.checkout_conviniently_description}}</p>
             </div>
           </div>
         </li>
@@ -494,8 +396,8 @@
           <div class="box">
             <i class="ti-headphone-alt"></i>
             <div class="justify-content-center">
-              <h3>Hỗ trợ 24/7</h3>
-              <p>Chăm sóc tận tình</p>
+              <h3>{{ui.support_247}}</h3>
+              <p>{{ui.support_247_description}}</p>
             </div>
           </div>
         </li>

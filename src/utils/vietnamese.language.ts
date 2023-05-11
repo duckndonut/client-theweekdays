@@ -24,9 +24,15 @@ export const Vietnamese = {
   quantity: 'Số lượng',
   image: 'Hình ảnh',
   preview: 'Xem trước',
+  review: 'Đánh giá',
+  product_quality: 'Chất lượng sản phẩm',
+  your_review: 'Đánh giá của bạn',
   description: 'Mô tả',
+  product_description: 'Mô tả sản phẩm',
   excerpt: 'Mô tả ngắn',
   price: 'Giá bán',
+  weight: 'Trọng lượng',
+  material: 'Chất liệu',
   original_price: 'Giá gốc',
   on_sale: 'Đang giảm giá',
   min_qty: 'Số lượng tối thiểu',
@@ -39,6 +45,7 @@ export const Vietnamese = {
   is_active: 'Tình trạng',
   used: 'Đã dùng',
   all: 'Tổng',
+  rating: 'Đánh giá',
   discount: 'Giảm giá',
   valid_from: 'Từ ngày',
   valid_to: 'Đến ngày',
@@ -89,6 +96,8 @@ export const Vietnamese = {
   update_status: 'Cập nhật trạng thái',
   change: 'Thay đổi',
   refresh: 'Làm mới',
+  add_image: 'Thêm hình ảnh',
+  submit_your_review: 'Gửi đánh giá của bạn',
 
   // confirmation
   confirm_add_product: 'Bạn có chắc chắn muốn thêm sản phẩm này không?',
@@ -142,9 +151,17 @@ export const Vietnamese = {
   product_id_syntax: 'Cú pháp: "ID1, ID2, ID3, ..."',
   enter_product_name: "Nhập tên sản phẩm",
   placeholder_add_to_favorite: 'Thích quá rùi nà',
+  product_suggestion: 'Gợi ý phối đồ từ The Weekdays',
+  product_suggestion_description: 'Nhận ngay những gợi ý phối đồ thời trang sành điệu từ The Weekdays để tạo nên phong cách cá tính và độc đáo.',
 
   // others
   default: 'Mặc định',
+  freeship: 'Miễn phí vận chuyển',
+  freeship_condition_description: 'Cho đơn hàng từ 300.000đ',
+  checkout_conviniently: 'Thanh toán tiện lợi',
+  checkout_conviniently_description: '100% Thanh toán bảo mật',
+  support_247: 'Hỗ trợ 24/7',
+  support_247_description: 'Chăm sóc tận tình',
 
   // action
   add_to_cart: 'Thêm vào giỏ hàng',
