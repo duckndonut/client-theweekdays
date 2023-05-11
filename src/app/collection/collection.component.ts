@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Collection } from 'src/model/collection.model';
 import { CollectionService } from 'src/service/collection.service';
+import { FormatService } from 'src/service/format.service';
 
 @Component({
   selector: 'app-collection',
@@ -10,7 +11,7 @@ import { CollectionService } from 'src/service/collection.service';
 export class CollectionComponent {
   highlightedCollection: Array<Collection>= [];
   normalCollection: Array<Collection>= [];
-  constructor(private collectionService: CollectionService) {
+  constructor(private collectionService: CollectionService,public _format: FormatService) {
     this.collectionService.getCollections().subscribe(
       (data: Array<Collection>) => {
         // lấy 5 collection đầu tiên làm highlighted

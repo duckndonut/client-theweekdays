@@ -19,6 +19,7 @@ import { FormatService } from 'src/service/format.service';
 import { FormsModule } from '@angular/forms';
 import { CollectionComponent } from './collection/collection.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ConfirmOrderComponent,
     OrderDetailComponent,
     CollectionComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CollectionDetailComponent
   ],
   imports: [
     BrowserModule,

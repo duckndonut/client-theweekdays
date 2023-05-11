@@ -1,0 +1,9 @@
+@import 'src/assets/css/blog.css';
+@import 'src/assets/css/style.css';
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.background{
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: fill;
+}

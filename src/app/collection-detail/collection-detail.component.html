@@ -1,0 +1,17 @@
+<div class="col-md-12 position-fixed">
+  <iframe style="pointer-events: none;" class="position-fixed top-0 start-0 background" [src]="videoURL" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+<div class="main " style="margin-top:550px;">
+  <div style="background-color: white; ">
+    <div class="container">
+      <div class="main_title" style="padding-top: 40PX;">
+        <h2>{{collection.name}}</h2>
+        <span style="margin-top: 20px;">look good everyday</span>
+      </div>
+      <div [innerHTML]="collection.description" style="margin-left: auto;margin-right: auto; width: fit-content; padding-bottom: 30px;"></div>
+
+    </div>
+  </div>
+</div>
