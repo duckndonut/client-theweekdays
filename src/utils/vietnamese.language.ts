@@ -1,4 +1,9 @@
 export const Vietnamese = {
+
+  // resource
+  img_nothing_to_show: 'https://i.pinimg.com/originals/0c/45/0c/0c450c5a9349bb992220b33ee7a0f41a.gif',
+
+  // language
   home: 'Trang chủ',
   category: 'Danh mục',
   product: 'Sản phẩm',
@@ -179,4 +184,5 @@ export const Vietnamese = {
   label_sort_by_rating: 'Đánh giá trung bình',
   label_sort_by_popularity: 'Phổ biến',
   label_sort_by_newness: 'Sản phẩm mới nhất',
+  label_sort_by_percent_off: "Giảm giá nhiều nhất",
 }
