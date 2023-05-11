@@ -6,8 +6,9 @@
 				<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
 					<div class="container">
 						<h1>{{ui.label_all_products}}</h1>
-            <h5 style="color: #fff;">
-              {{ui.label_productpage_header_description_1}}<br>{{ui.label_productpage_header_description_2}}</h5>
+						<h5 style="color: #fff;">
+							{{ui.label_productpage_header_description_1}}<br>{{ui.label_productpage_header_description_2}}
+						</h5>
 					</div>
 				</div>
 				<img src="https://cdn.shopify.com/s/files/1/0456/8825/8724/files/FG7_denim_007.jpg" class="img-fluid"
@@ -20,13 +21,15 @@
 					<ul class="clearfix">
 						<li>
 							<div class="sort_select">
-								<select name="sort" id="sort" [(ngModel)]="sort_mode" (ngModelChange)="reloadDataAfterSortAndFilter()">
-                  <option value="popularity" selected="selected">{{ui.label_sort_by}}: {{ui.label_sort_by_popularity}}
-                  </option>
-                  <option value="rating">{{ui.label_sort_by_rating}}</option>
-                  <option value="percent-off">{{ui.label_sort_by_percent_off}}</option>
-                  <option value="price">{{ui.label_sort_by_price}}</option>
-                  <option value="price-desc">{{ui.label_sort_by_price_desc}}</option>
+								<select name="sort" id="sort" [(ngModel)]="sort_mode"
+									(ngModelChange)="reloadDataAfterSortAndFilter()">
+									<option value="popularity" selected="selected">{{ui.label_sort_by}}:
+										{{ui.label_sort_by_popularity}}
+									</option>
+									<option value="rating">{{ui.label_sort_by_rating}}</option>
+									<option value="percent-off">{{ui.label_sort_by_percent_off}}</option>
+									<option value="price">{{ui.label_sort_by_price}}</option>
+									<option value="price-desc">{{ui.label_sort_by_price_desc}}</option>
 								</select>
 							</div>
 						</li>
@@ -174,29 +177,31 @@
 							<div class="filter_type version_2">
 								<h4><a href="#filter_4" data-toggle="collapse" class="closed">{{ui.price}}</a></h4>
 								<div class="collapse" id="filter_4">
-                  <ul>
-                    <li *ngFor="let p_filter of price_filter_mode">
-                      <label class="container_check">{{_format.formatCurrency(p_filter.min)}} —
-                        {{_format.formatCurrency(p_filter.max)}}<small>**</small>
-                        <input type="checkbox" [(ngModel)]="p_filter.selected" (ngModelChange)="priceFilterChange()">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
+									<ul>
+										<li *ngFor="let p_filter of price_filter_mode">
+											<label class="container_check">{{_format.formatCurrency(p_filter.min)}} —
+												{{_format.formatCurrency(p_filter.max)}}<small>**</small>
+												<input type="checkbox" [(ngModel)]="p_filter.selected"
+													(ngModelChange)="priceFilterChange()">
+												<span class="checkmark"></span>
+											</label>
+										</li>
+									</ul>
+								</div>
 							</div>
 							<!-- /filter_type -->
 							<div class="buttons">
-								<a href="#0" class="btn_1">{{ui.filter}}</a> &nbsp;<a href="#0" class="btn_1 gray">{{ui.refresh}}</a>
+								<a class="btn_1">{{ui.filter}}</a> &nbsp;
+								<a class="btn_1 gray" (click)="refresh()">{{ui.refresh}}</a>
 							</div>
 						</div>
 					</aside>
-          <div class="col-lg-9" *ngIf="products.length == 0">
-            <img src="{{ui.img_nothing_to_show}}" alt="Nothing to show">
-          </div>
+					<div class="col-lg-9" *ngIf="products.length == 0">
+						<img src="{{ui.img_nothing_to_show}}" alt="Nothing to show">
+					</div>
 					<!-- /col -->
 					<div class="col-lg-9">
-						<div class="row small-gutters" >
+						<div class="row small-gutters">
 							<div class="col-6 col-md-4" *ngFor="let p of product_slides">
 								<div class="grid_item">
 									<figure>
@@ -226,10 +231,13 @@
 									</div>
 									<ul>
 										<li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-												title="Thích quá rùi nà"><i class="ti-heart"></i><span>{{ui.add_to_favorite}}</span></a></li>
+												title="Thích quá rùi nà"><i
+													class="ti-heart"></i><span>{{ui.add_to_favorite}}</span></a></li>
 										<!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
 										<li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left"
-												title="Thêm vào giỏ hàng"><i class="ti-shopping-cart"></i><span>{{ui.add_to_cart}}</span></a></li>
+												title="Thêm vào giỏ hàng"><i
+													class="ti-shopping-cart"></i><span>{{ui.add_to_cart}}</span></a>
+										</li>
 									</ul>
 								</div>
 								<!-- /grid_item -->
@@ -241,13 +249,14 @@
 						<!-- /row -->
 						<div class="pagination__wrapper">
 							<ul class="pagination">
-							  <li><a (click)="previousPage()" class="prev" title="previous page">&#10094;</a></li>
-							  <li *ngFor="let pagenumber of generatePageNumberArray(pages)">
-								<a (click)="changePage(pagenumber)" class="{{activePage(pagenumber)}}">{{pagenumber}}</a>
-							  </li>
-							  <li><a (click)="nextPage()" class="next" title="next page">&#10095;</a></li>
+								<li><a (click)="previousPage()" class="prev" title="previous page">&#10094;</a></li>
+								<li *ngFor="let pagenumber of generatePageNumberArray(pages)">
+									<a (click)="changePage(pagenumber)"
+										class="{{activePage(pagenumber)}}">{{pagenumber}}</a>
+								</li>
+								<li><a (click)="nextPage()" class="next" title="next page">&#10095;</a></li>
 							</ul>
-						  </div>
+						</div>
 					</div>
 					<!-- /col -->
 				</div>

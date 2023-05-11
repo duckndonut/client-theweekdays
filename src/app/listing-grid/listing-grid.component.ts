@@ -196,4 +196,10 @@ export class ListingGridComponent {
     this.changePage(1);
     this.goToTop();
   }
+  refresh() {
+    for (let i = 0; i < this.price_filter_mode.length; i++) {
+      this.price_filter_mode[i].selected = false;
+    }
+    this.priceFilterChange();
+  }
 }
