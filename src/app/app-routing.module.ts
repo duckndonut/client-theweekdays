@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { CollectionComponent } from './collection/collection.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "confirmorder", component:ConfirmOrderComponent},
   { path: "order", component: TrackingOrderComponent},
-  { path: "order/id", component: OrderDetailComponent} // khi đổ dữ liệu về thì chuyển thành order/:id
+  { path: "order/id", component: OrderDetailComponent}, // khi đổ dữ liệu về thì chuyển thành order/:id
+  { path: "collection", component: CollectionComponent },
 ];
 
 @NgModule({
