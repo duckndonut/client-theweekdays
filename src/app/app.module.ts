@@ -18,8 +18,12 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { FormatService } from 'src/service/format.service';
 import { FormsModule } from '@angular/forms';
+
 import { ToastrModule } from 'ngx-toastr';
 import { ProductService } from 'src/service/product.service';
+
+import { CollectionComponent } from './collection/collection.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { ProductService } from 'src/service/product.service';
     TrackingOrderComponent,
     CartComponent,
     ConfirmOrderComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    CollectionComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
