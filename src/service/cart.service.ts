@@ -16,6 +16,8 @@ export class CartService {
   final_total: number = 0;
   delivery_fee: number = 0;
 
+  // place an order
+
   getCartLocal() {
     let cart = localStorage.getItem('cart');
     if (!cart) {

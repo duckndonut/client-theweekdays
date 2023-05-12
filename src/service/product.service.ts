@@ -11,10 +11,12 @@ import { CartService } from './cart.service';
 })
 export class ProductService {
   private applicationHeaders = new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
   });
   private textHeaders = new HttpHeaders({
-    'Content-Type': 'text/plain; charset=utf-8'
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
   });
 
   private ui = this._format.useLanguage();

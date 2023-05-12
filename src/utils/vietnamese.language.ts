@@ -3,6 +3,8 @@ export const Vietnamese = {
   // resource
   img_nothing_to_show: 'https://i.pinimg.com/originals/0c/45/0c/0c450c5a9349bb992220b33ee7a0f41a.gif',
 
+  img_behind: "https://i.pinimg.com/564x/e0/e3/32/e0e3327d4d038dda1696619de128e0e2.jpg",
+
   // language
   home: 'Trang chủ',
   category: 'Danh mục',
@@ -154,6 +156,21 @@ export const Vietnamese = {
   fail_logout: 'Đăng xuất thất bại',
   fail_logout_message: 'Bạn chưa đăng nhập!',
   confirm_cancel: 'Bạn có chắc chắn muốn hủy không?',
+  success_login_message: 'Chào mừng bạn đến với The Weekdays!',
+  success_register_message: 'Đăng ký thành công!',
+  fail_signup: 'Đăng ký thất bại',
+  fail_signup_message: 'Tên đăng nhập đã tồn tại!',
+  already_login_message: 'Bạn đã đăng nhập rồi!',
+  fail_order_message: 'Đặt hàng thất bại',
+  success_order_message: 'Đặt hàng thành công',
+
+  // error handling http response
+  error_http_401: 'Bạn chưa đăng nhập',
+  error_http_403: 'Bạn không có quyền truy cập',
+  error_http_404: 'Không tìm thấy trang',
+  error_http_500: 'Lỗi máy chủ',
+  error_http_unknown: 'Lỗi không xác định',
+  error_http: 'Lỗi kết nối',
 
   // placeholder
   enter_name: 'Nhập tên',
@@ -178,6 +195,32 @@ export const Vietnamese = {
   add_to_favorite: 'Thêm vào yêu thích',
   update_cart: 'Cập nhật giỏ hàng',
   apply: 'Áp dụng',
+
+  // login logout register
+  register: 'Đăng ký',
+  title_login_register: 'Đăng nhập / Đăng ký',
+  login_with_facebook: 'Đăng nhập với Facebook',
+  login_with_google: 'Đăng nhập với Google',
+  or: "Hoặc",
+  remember_me: 'Ghi nhớ đăng nhập',
+  forgot_pw: 'Quên mật khẩu?',
+  message_new_pw_will_send: 'Mật khẩu mới sẽ được gửi đến email của bạn',
+  find_location: 'Tìm vị trí',
+  validate_quality_location: 'Kiểm tra chất lượng vị trí',
+  data_security: 'Bảo mật dữ liệu',
+  payment_security: 'Bảo mật thanh toán',
+  you_are_new_to_the_weekdays: 'Bạn mới biết tới The Weekdays?',
+  required: 'Bắt buộc',
+  phone_number: 'Số điện thoại',
+  username: 'Tên đăng nhập',
+  password: 'Mật khẩu',
+  firstname: 'Tên',
+  lastname: 'Họ',
+  address: 'Địa chỉ',
+  city: 'Tỉnh/Thành phố',
+  district: 'Quận/Huyện',
+  agree: 'Tôi đồng ý với',
+  policy: 'Điều khoản và dịch vụ',
 
   // Product list page: /listrow
   label_all_products: 'Tất cả sản phẩm',
