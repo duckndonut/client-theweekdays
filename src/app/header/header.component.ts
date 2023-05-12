@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Category } from 'src/model/category.model';
+import { Product } from 'src/model/product.model';
 import { CartService } from 'src/service/cart.service';
 import { CategoryService } from 'src/service/category.service';
 import { FormatService } from 'src/service/format.service';
@@ -68,4 +69,5 @@ export class HeaderComponent {
       }
     )
   }
+
 }

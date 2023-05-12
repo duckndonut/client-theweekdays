@@ -1,7 +1,7 @@
 [
   {
     "context": ["/v1"],
-    "target": "https://api.theweekdays.live",
+    "target": "https://stag-api.theweekdays.live",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

@@ -21,12 +21,7 @@ export class ListingGridComponent {
   constructor(private _productservice: ProductService, public _format: FormatService) {
     const urlParams = new URLSearchParams(window.location.search);
     this.category = urlParams.get('collection');
-    if(this.category===''){
-      this.getAllProducts();
-    }
-    else{
-      this._productservice.getProductByCategory(this.category);
-    }
+    this.getAllProducts();
 
   }
 

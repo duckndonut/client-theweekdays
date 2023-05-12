@@ -1,10 +1,5 @@
 <div class="main container" style="background-color: white;">
   <div class="breadcrumbs">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Category</a></li>
-      <li>Page active</li>
-    </ul>
   </div>
   <div class="container margin_60_35">
     <div class="main_title">
@@ -26,7 +21,7 @@
       <div class="col-sm-12 col-md-6">
         <div class="row small-gutters mt-md-0 mt-sm-2">
           <div class="col-sm-6">
-            <a  [routerLink]="['/collection/',highlightedCollection[1]._id]">
+            <a [routerLink]="['/collection/',highlightedCollection[1]._id]">
               <img src="{{highlightedCollection[1].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -36,7 +31,7 @@
             </a>
           </div>
           <div class="col-sm-6">
-            <a  [routerLink]="['/collection/',highlightedCollection[2]._id]">
+            <a [routerLink]="['/collection/',highlightedCollection[2]._id]">
               <img src="{{highlightedCollection[2].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -48,7 +43,7 @@
         </div>
         <div class="row small-gutters mt-md-3 mt-sm-3">
           <div class="col-sm-6">
-            <a  [routerLink]="['/collection/',highlightedCollection[3]._id]">
+            <a [routerLink]="['/collection/',highlightedCollection[3]._id]">
               <img src="{{highlightedCollection[3].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -58,7 +53,7 @@
             </a>
           </div>
           <div class="col-sm-6">
-            <a  [routerLink]="['/collection/',highlightedCollection[4]._id]">
+            <a [routerLink]="['/collection/',highlightedCollection[4]._id]">
               <img src="{{highlightedCollection[4].image}}" data-src="assets/img/img_cat_home_2.jpg" alt=""
                 class="img-fluid lazy">
               <div class="wrapper">
@@ -97,11 +92,8 @@
               </div>
             </a>
           </div>
-
-
         </div>
       </div>
-
       <!--/categories_grid-->
     </div>
   </div>

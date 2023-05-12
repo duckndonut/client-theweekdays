@@ -28,10 +28,11 @@
               <img [src]="p.image[0]" style="width: 150px; height: 150px; object-fit: cover;">
             </div>
             <div class="col-4" style="width: 50%;">
-              <h5>
+              <h5 style="cursor: pointer;">
                 {{p.name}}
               </h5>
-              <p>{{p.price}} VND</p>
+             <strong> <p style="color:rgb(41, 41, 126)">{{p.price}} VND</p></strong>
+              <p>{{p.excerpt}}</p>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
       <div class="top_banner">
         <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.3)">
           <div class="container">
-            <h1>{{ui.label_all_products}}</h1>
+            <h1>Chọn cho mình một sản phẩm ưng ý nhất nhé!!!</h1>
             <h5 style="color: #fff;">
               {{ui.label_productpage_header_description_1}}<br>{{ui.label_productpage_header_description_2}}</h5>
           </div>
@@ -49,126 +49,6 @@
           <aside class="col-lg-3" id="sidebar_fixed">
             <div class="filter_col">
               <div class="inner_bt"><a href="#" class="open_filters"><i class="ti-close"></i></a></div>
-              <div class="filter_type version_2">
-                <h4><a href="#filter_1" data-toggle="collapse" class="closed">{{ui.category}}</a></h4>
-                <div class="collapse" id="filter_1">
-                  <ul>
-                    <li>
-                      <label class="container_check">Áo Sơmi <small>12</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Áo Khoác <small>24</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Áo Polo <small>23</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Áo Thun <small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Quần Tây <small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Quần Short <small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check"> Quần Jeans<small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Quần Kaki <small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-                <!-- /filter_type -->
-              </div>
-              <!-- /filter_type -->
-              <div class="filter_type version_2">
-                <h4><a href="#filter_2" data-toggle="collapse" class="closed">{{ui.size}}</a></h4>
-                <div class="collapse" id="filter_2">
-                  <ul>
-                    <li>
-                      <label class="container_check">Xanh <small>06</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Trắng <small>12</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Đen <small>17</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Be <small>43</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- /filter_type -->
-              <div class="filter_type version_2">
-                <h4><a href="#filter_3" data-toggle="collapse" class="closed">{{ui.collection}}</a></h4>
-                <div class="collapse" id="filter_3">
-                  <ul>
-                    <li>
-                      <label class="container_check">Minimalist <small>11</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Urban Street <small>08</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Casual Wear <small>05</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="container_check">Vinatge <small>18</small>
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </div>
               <!-- /filter_type -->
               <div class="filter_type version_2">
                 <h4><a href="#filter_4" data-toggle="collapse" class="closed">{{ui.price}}</a></h4>
@@ -186,7 +66,6 @@
               </div>
               <!-- /filter_type -->
               <div class="buttons">
-                <a  class="btn_1">{{ui.filter}}</a> &nbsp; 
                 <a  class="btn_1 gray" (click)="refresh()">{{ui.refresh}}</a>
               </div>
             </div>
@@ -222,7 +101,7 @@
                   <span class="old_price">{{_format.formatCurrency(p.original_price)}}</span>
                 </div>
                 <ul>
-                  <li><a href="#0" class="btn_1">{{ui.add_to_cart}}</a></li>
+                  <li><a [routerLink]="['/product/',p._id]" class="btn_1">{{ui.add_to_cart}}</a></li>
                   <li><a href="#0" class="btn_1 gray tooltip-1" data-toggle="tooltip" data-placement="top"
                       title="{{ui.placeholder_add_to_favorite}}"><i
                         class="ti-heart"></i><span>{{ui.add_to_favorite}}</span></a></li>

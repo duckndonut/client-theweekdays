@@ -1,66 +1,19 @@
 <main>
   <div class="container margin_30">
-    <div class="countdown_inner">Chương trình giảm giá 20% sẽ kết thúc sau.<div data-countdown="2019/05/15"
-        class="countdown"></div>
-    </div>
+    <div class="countdown_inner">Chương trình giảm giá 20% sẽ diễn ra đến hết ngày 01/06/2023! Mua ngay kẻo lỡ!</div>
     <div class="row">
-      <div class="col-md-6">
-        <div class="all">
-          <div class="slider">
-            <div class="owl-carousel owl-theme main">
-              <!-- <div *ngFor="let img of product.image" class="item-box" style="background-image: url( {{img}} );"></div> -->
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item-box"></div>
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item-box"></div>
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item-box"></div>
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item-box"></div>
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item-box"></div>
-            </div>
-            <div class="left nonl"><i class="ti-angle-left"></i></div>
-            <div class="right"><i class="ti-angle-right"></i></div>
-          </div>
-          <div class="slider-two">
-            <div class="owl-carousel owl-theme thumbs">
-              <!-- <div *ngFor="let img of product.image" class="item" style="background-image: url( {{img}} );"></div> -->
-              <div
-                style="background-image: url(https://i.pinimg.com/564x/92/50/11/9250112a8b880f161c723c1be309bda0.jpg);"
-                class="item"></div>
-              <div
-                style="background-image: url(https://down-vn.img.susercontent.com/file/f25bfcfc4d9665352db6914822522708_tn);"
-                class="item"></div>
-              <div
-                style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-7qvev-lft6o0dz9d1ff5_tn);"
-                class="item"></div>
-              <div
-                style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22110-s845pvtq4dkv39_tn);"
-                class="item"></div>
-              <div
-                style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22120-4pfc1beb8mkv64_tn);"
-                class="item"></div>
-            </div>
-            <div class="left-t nonl-t"></div>
-            <div class="right-t"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <!-- <div class="breadcrumbs">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li>Page active</li>
-                    </ul>
-                </div> -->
-        <!-- /page_header -->
+
+
+      <div class="col-lg-6 magnific-gallery">
+        <p>
+            <img class="col-12" *ngFor="let img of product.image" src="{{img}}">
+        </p>
+    </div>
+
+
+
+
+    <div class="col-md-6 sticky">
         <div class="prod_info">
           <h1>{{product.name}}</h1>
           <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i
@@ -68,17 +21,6 @@
               lượt đánh giá</em></span>
           <p><small>SKU: MTKRY-001</small><br>{{product.excerpt}}</p>
           <div class="prod_options">
-            <!-- <div class="row">
-              <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>{{ui.color}}</strong></label>
-              <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
-                <ul>
-                  <li><a href="#0" class="color color_1 active"></a></li>
-                  <li><a href="#0" class="color color_2"></a></li>
-                  <li><a href="#0" class="color color_3"></a></li>
-                  <li><a href="#0" class="color color_4"></a></li>
-                </ul>
-              </div>
-            </div> -->
             <div class="row">
               <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>{{ui.size}}</strong> - {{ui.table_size}} <a
                   href="#0" data-toggle="modal" data-target="#size-modal" title="{{ui.table_size}}"><i
@@ -121,8 +63,7 @@
                   class="old_price">{{_format.formatCurrency(product.original_price)}}</span></div>
             </div>
             <div class="col-lg-5 col-md-6">
-              <div class="btn_add_to_cart"><a
-                  (click)="addToCart(product._id, selected_variant, quantity, $event)"
+              <div class="btn_add_to_cart"><a (click)="addToCart(product._id, selected_variant, quantity, $event)"
                   class="btn_1">{{ui.add_to_cart}}</a></div>
             </div>
           </div>
@@ -139,7 +80,7 @@
           </ul>
         </div>
         <!-- /product_actions -->
-      </div>
+    </div>
     </div>
     <!-- /row -->
   </div>
@@ -348,10 +289,9 @@
               <!-- <div data-countdown="2019/05/15" class="countdown"></div> -->
 
               <span *ngIf="rc_product.sale_percent > 0" class="ribbon off">- {{rc_product.sale_percent}} %</span>
-              <a >
+              <a>
                 <img class="img-fluid lazy" src="{{ rc_product.image }}" alt="">
-                <img class="img-fluid lazy"
-                  src="{{ui.img_behind}}" alt="" >
+                <img class="img-fluid lazy" src="{{ui.img_behind}}" alt="">
               </a>
             </figure>
             <div class="rating">
@@ -371,8 +311,8 @@
                     class="ti-heart"></i><span>{{ui.placeholder_add_to_favorite}}</span></a></li>
               <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
               <li>
-                <a (click)="addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1"
-                  data-toggle="tooltip" data-placement="left" title="{{ui.add_to_cart}}">
+                <a (click)="addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1" data-toggle="tooltip"
+                  data-placement="left" title="{{ui.add_to_cart}}">
                   <i class="ti-shopping-cart"></i>
                   <span>{{ui.add_to_cart}}</span>
                 </a>
