@@ -26,6 +26,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { LookbookComponent } from './lookbook/lookbook.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LookbookComponent } from './lookbook/lookbook.component';
     CollectionComponent,
     AboutUsComponent,
     CollectionDetailComponent,
-    LookbookComponent
+    LookbookComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

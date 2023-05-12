@@ -13,6 +13,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { LookbookComponent } from './lookbook/lookbook.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: "aboutus", component: AboutUsComponent},
   { path: "collection/:id", component:CollectionDetailComponent},
   { path: "lookbook", component: LookbookComponent },
+  { path: "account", component: AccountComponent}
 ];
 
 @NgModule({
