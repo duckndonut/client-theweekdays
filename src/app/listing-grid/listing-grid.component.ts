@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from 'src/model/product.model';
 import { FormatService } from 'src/service/format.service';
 import { ProductService } from 'src/service/product.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-listing-grid',
@@ -16,39 +17,58 @@ export class ListingGridComponent {
   pages: number = 0;
   current_page: number = 1;
   sort_mode: string = 'popularity';
-  category:any = '';
+  category: string = '';
 
-  constructor(private _productservice: ProductService, public _format: FormatService) {
-    const urlParams = new URLSearchParams(window.location.search);
-    this.category = urlParams.get('collection');
-    if(this.category===''){
+  constructor(private _productservice: ProductService, public _format: FormatService, private route: ActivatedRoute) {
+    // Get all products
+
+    this.route.queryParams.subscribe((query: Params) => {
+      console.log(query);
+      this.category = query['category'];
       this.getAllProducts();
-    }
-    else{
-      this._productservice.getProductByCategory(this.category);
-    }
 
+    });
   }
 
   // Get all products
   getAllProducts() {
-    this._productservice.getAllProducts().subscribe({
-      next: (data) => {
-        // this.products = [];
-        this.source = [];
-        for (let i = 0; i < data.length; i++) {
-          // this.products.push(new Product(data[i]));
-          this.source.push(new Product(data[i]));
-        }
-        this.products = [...this.source];
-        this.pages = Math.ceil(this.source.length / 9);
-        this.getProductSlides(this.current_page);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
+    if (this.category != '') {
+      this._productservice.getProductByCategory(this.category).subscribe({
+        next: (data:any) => {
+          // this.products = [];
+          this.source = [];
+          for (let i = 0; i < data.length; i++) {
+            // this.products.push(new Product(data[i]));
+            this.source.push(new Product(data[i]));
+          }
+          this.products = [...this.source];
+          this.pages = Math.ceil(this.source.length / 9);
+          this.getProductSlides(this.current_page);
+        },
+        error: (err: any) => {
+          console.log(err);
+        },
+      });
+    } else {
+      this._productservice.getAllProducts().subscribe({
+        next: (data) => {
+          // this.products = [];
+          this.source = [];
+          for (let i = 0; i < data.length; i++) {
+            // this.products.push(new Product(data[i]));
+            this.source.push(new Product(data[i]));
+          }
+          this.products = [...this.source];
+          this.pages = Math.ceil(this.source.length / 9);
+          this.getProductSlides(this.current_page);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+    }
   }
+
 
   // Generate page number array for pagination
   generatePageNumberArray(num: number): Array<number> {
