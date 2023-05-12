@@ -1,0 +1,102 @@
+<main class="bg_gray">
+    <div class="container margin_30">
+        <div class="page_header">
+            <!-- <div class="breadcrumbs">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li>Page active</li>
+                </ul>
+            </div> -->
+            <h1>Tin tức thời trang</h1>
+        </div>
+        <!-- /page_header -->
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="widget search_blog d-block d-sm-block d-md-block d-lg-none">
+                    <div class="form-group">
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Search..">
+                        <button type="submit"><i class="ti-search"></i><span class="sr-only">Search</span></button>
+                    </div>
+                </div>
+                <!-- /widget -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a [routerLink]="['/blog']"><img src="https://glints.com/vn/blog/wp-content/uploads/2022/03/phong-cach-aesthetic.jpeg" alt="">
+                                    <div class="preview"><span>Đọc thêm</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Ngày 12/05/2023</small>
+                                <h2><a [routerLink]="['/blog']">8 Cách Phối Đồ Local Brand “Đơn Giản Mà Đẹp” cho Nam Nữ</a></h2>
+                                <p>Bạn yêu thích các sản phẩm của local brand? Nhưng chưa biết cách phối chúng như thế nào cho đẹp nhất?</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="../assets/img/thumbnail/ghung.jpg" alt=""></div> Quản trị viên
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                    <div class="col-md-6">
+                        <article class="blog">
+                            <figure>
+                                <a [routerLink]="['/blog']"><img src="https://bumshop.com.vn/wp-content/uploads/2021/07/anh-nen-local-brand-ao-thun.jpg" alt="">
+                                    <div class="preview"><span>Đọc thêm</span></div>
+                                </a>
+                            </figure>
+                            <div class="post_info">
+                                <small>Ngày 12/05/2023</small>
+                                <h2><a [routerLink]="['/blog']">“Cạn Ví” vs 16+ Shop Bán Áo Thun Local Brand Đẹp “Nhức Nách”</a></h2>
+                                <p>Bạn yêu thích các sản phẩm của local brand? Nhưng chưa biết cách phối chúng như thế nào cho đẹp nhất?</p>
+                                <ul>
+                                    <li>
+                                        <div class="thumb"><img src="../assets/img/thumbnail/ghung.jpg" alt=""></div> Quản trị viên
+                                    </li>
+                                    <li><i class="ti-comment"></i>20</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <!-- /article -->
+                    </div>
+                    <!-- /col -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /col -->
+            <aside class="col-lg-3">
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Tin mới nhất</h4>
+                    </div>
+                    <ul class="comments-list">
+                        <li>
+                            <div class="alignleft">
+                                <a [routerLink]="['/blog']"><img src="https://glints.com/vn/blog/wp-content/uploads/2022/03/phong-cach-aesthetic.jpeg" alt=""></a>
+                            </div>
+                            <small>Ngày 12/05/2023</small>
+                            <h3><a [routerLink]="['/blog']" title="">8 cách phối đồ Local Brand...</a></h3>
+                        </li>
+                        <li>
+                            <div class="alignleft">
+                                <a [routerLink]="['/blog']"><img src="https://bumshop.com.vn/wp-content/uploads/2021/07/anh-nen-local-brand-ao-thun.jpg" alt=""></a>
+                            </div>
+                            <small>Ngày 12/05/2023</small>
+                            <h3><a [routerLink]="['/blog']" title="">"Cạn ví" vs 16+ Shop Bán áo thun ...</a></h3>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /widget -->
+            </aside>
+            <!-- /aside -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
+<!--/main-->

@@ -27,6 +27,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { LookbookComponent } from './lookbook/lookbook.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     AboutUsComponent,
     CollectionDetailComponent,
     LookbookComponent,
-    WishlistComponent
+    WishlistComponent,
+    BlogComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,
