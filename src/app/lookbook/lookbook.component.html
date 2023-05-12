@@ -1,25 +1,44 @@
-<main>
-  <h3 class="center" style="padding: 35px;">Lookbook</h3>
+<main style="padding-bottom: 50px;">
+  <h3 class="center" style="padding: 35px;">Lookbook: {{collection.name}}</h3>
+  <div [innerHTML]="collection.description"
+    style="margin-left: 100px;margin-right: 100px; width: fit-content; padding-bottom: 30px;">
+  </div>
+  <div style="margin: auto; width: fit-content; margin-bottom: 50px; margin-top: 0px; font-size: 20px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle navigation"
+      viewBox="0 0 16 16" (click)="previousLookbook()">
+      <path fill-rule="evenodd"
+        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+    </svg>
+    {{shownIndex}} / {{collection.lookbook.length}}
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle navigation" viewBox="0 0 16 16" (click)="nextLookbook()">
+      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+    </svg>
+  </div>
   <div class="container">
     <div class="row align-items-start" style="width: 100%;">
       <div class="col">
-        <img [src]="lookbook.image" style="min-width: 280px;max-width: 100%; margin: auto;">
+        <img [src]="lookbook.image" style="min-width: 400px;max-width: 100%; margin: auto;">
       </div>
       <div class="col">
         <div class="container">
-          <div *ngFor="let p of listProducts" class="row align-items-start product" style="padding-top: 10px; padding-bottom: 10px; background-color: white;">
+          <h3>Sản phẩm trong bản phối này</h3>
+          <div *ngFor="let p of listProducts" class="row align-items-start product"
+            style="padding-top: 10px; padding-bottom: 10px; background-color: white;" [routerLink]="['/product/',p._id]">
             <div class="col-3" style="width: fit-content;">
-              <img [src]="p.image" style="width: 150px; height: 150px; object-fit: cover;">
+              <img [src]="p.image[0]" style="width: 150px; height: 150px; object-fit: cover;">
             </div>
-            <div class="col-4"style="width: 50%;">
+            <div class="col-4" style="width: 50%;">
               <h5>
-               {{p.name}}
+                {{p.name}}
               </h5>
               <p>{{p.price}} VND</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div> <!--Danh sách các bản phối khác trong lookbook-->
+
     </div>
   </div>
 </main>
