@@ -21,3 +21,31 @@
     background-color: blue;
     color: white;
   }
+
+
+  .top_panel {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+  }
+
+  .list-group-item {
+    background-color: #f8f9fa; /* Thay đổi màu nền tùy ý */
+    border: none; /* Xóa đường viền */
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef; /* Thay đổi màu nền khi trỏ chuột */
+  }
+  .list-group-item {
+    background-color: #f8f9fa; /* Thay đổi màu nền tùy ý */
+    border: none; /* Xóa đường viền */
+    list-style: none; /* Loại bỏ bullet */
+    color: black; /* Thay đổi màu chữ */
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef; /* Thay đổi màu nền khi trỏ chuột */
+  }
+  
+  
+  

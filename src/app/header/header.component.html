@@ -69,7 +69,7 @@
         <div class="col-xl-3 col-lg-3 d-lg-flex align-items-center justify-content-end text-right row">
           <ul class="top_tools col-12">
             <li>
-              <a class="search_panel" (click)="search()"><span>Search</span>
+              <a class="search_panel" (click)="search()" style="cursor: pointer;"><span>Search</span>
               </a>
             </li>
             <li>
@@ -128,18 +128,30 @@
               <!-- /dropdown-access-->
             </li>
           </ul>
-          <input class="col-6 {{appear}}" type="search" style="margin-left: 10px; " name="input" [(ngModel)]="name"
-            (change)="getProductByName(name)">
-          <ul class="list-group">
-            <li class="item" *ngFor="let p of listProduct" [routerLink]="['/product/',p._id]">{{p.name}}</li>
-          </ul>
         </div>
       </div>
       <!-- /row -->
     </div>
   </div>
   <!-- /main_header -->
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 col-12 {{ appear }}" type="search" name="input" [(ngModel)]="name" (change)="getProductByName(name)" placeholder="Tìm kiếm sản phẩm...">
+    </div>
+    <ul class="list-group mt-2">
+      <li class="list-group-item" *ngFor="let p of listProduct" [routerLink]="['/product/',p._id]" style="cursor: pointer;">{{p.name}}</li>
+    </ul>
+  </div>
+</div>
+
+
+
 </header>
+
+
+
+
 <div class="top_panel">
   <div class="container header_panel">
     <a href="#0" class="btn_close_top_panel"><i class="ti-close"></i></a>
