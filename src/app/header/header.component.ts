@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/service/cart.service';
+import { FormatService } from 'src/service/format.service';
 
 
 @Component({
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  ui = this._format.useLanguage();
+  constructor( public _cartservice: CartService, public _format: FormatService ) {
 
-
+  }
 }
