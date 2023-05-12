@@ -3,4 +3,21 @@
     top: 0;
     z-index: 9999;
   }
-  
+
+  .invisible {
+    display: none;
+  }
+
+  .visible {
+    display: inline;
+  }
+
+  .item{
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .item:hover{
+    background-color: blue;
+    color: white;
+  }
