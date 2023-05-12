@@ -34,54 +34,19 @@
               </li>
               <li class="megamenu submenu">
                 <a href="javascript:void(0);" class="show-submenu-mega">Danh mục</a>
-                <div class="menu-wrapper">
-                  <div class="row small-gutters">
-                    <div class="col-lg-3">
+                <div class="menu-wrapper" style="width: fit-content;">
+                  <div class="row mb-3 small-gutters" >
+                    <div class="col-md-6">
                       <h3>ÁO</h3>
                       <ul>
-                        <li><a [routerLink]="['/listgrid']">Tất cả áo</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo Thun</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo Sơmi</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo Polo</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo Khoác</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo xx</a></li>
-                        <li><a [routerLink]="['/listgrid']">Áo xxx</a></li>
+                        <li *ngFor="let a of top"><a href="/listgrid?category={{a._id}}">{{a.name}}</a></li>
                       </ul>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-md-6">
                       <h3>Quần</h3>
                       <ul>
-                        <li><a [routerLink]="['/listgrid']">Tất cả quần</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần Tây</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần Kaki</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần Jeans</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần Shorts</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần xx</a></li>
-                        <li><a [routerLink]="['/listgrid']">Quần xxx</a></li>
-
-
+                        <li *ngFor="let p of pant"><a href="/listgrid?category={{p._id}}">{{p.name}}</a></li>
                       </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <h3>Phụ kiện</h3>
-                      <ul>
-                        <li><a [routerLink]="['/listrow']">Tất cả phụ kiện</a></li>
-                        <li><a [routerLink]="['/listrow']">Tất</a></li>
-                        <li><a [routerLink]="['/listrow']">Kính mát</a></li>
-                        <li><a [routerLink]="['/listrow']">Thắt lưng</a></li>
-                        <li><a [routerLink]="['/listrow']">Túi</a></li>
-                        <li><a [routerLink]="['/listrow']">Khăn Choàng</a></li>
-                        <li><a [routerLink]="['/listrow']">Giày & Giày Sandal</a></li>
-                        <li><a [routerLink]="['/listrow']">Khác</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-3 d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                      <div class="banner_menu">
-                        <a href="#0">
-                          <img src="../assets/img/thumbnail/category.png" width="400" height="550" alt=""
-                            class="img-fluid lazy">
-                        </a>
-                      </div>
                     </div>
                   </div>
                   <!-- /row -->

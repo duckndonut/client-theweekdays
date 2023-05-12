@@ -63,6 +63,18 @@ export class ProductService {
     );
   }
 
+  getProductByCategory(category: string): Observable<any> {
+    const requestOptions: Object = {
+      headers: this.textHeaders,
+      responseType: "text"
+    }
+    return this._http.get<any>('/v1/products?category=' + category, requestOptions).pipe(
+      map(res => JSON.parse(res) as Product[]),
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
   // error handling
   handleError(error: HttpErrorResponse) {
     return throwError(() => new Error(error.message))

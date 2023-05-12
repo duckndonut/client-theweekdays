@@ -16,9 +16,18 @@ export class ListingGridComponent {
   pages: number = 0;
   current_page: number = 1;
   sort_mode: string = 'popularity';
+  category:any = '';
 
   constructor(private _productservice: ProductService, public _format: FormatService) {
-    this.getAllProducts();
+    const urlParams = new URLSearchParams(window.location.search);
+    this.category = urlParams.get('collection');
+    if(this.category===''){
+      this.getAllProducts();
+    }
+    else{
+      this._productservice.getProductByCategory(this.category);
+    }
+
   }
 
   // Get all products
