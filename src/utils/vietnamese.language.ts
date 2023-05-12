@@ -13,6 +13,7 @@ export const Vietnamese = {
   coupon: 'Mã giảm giá',
   logout: 'Đăng xuất',
   login: 'Đăng nhập',
+  cart: 'Giỏ hàng',
   detail_product: 'Chi tiết sản phẩm',
   detail_order: 'Chi tiết đơn hàng',
   detail_customer: 'Chi tiết khách hàng',
@@ -65,6 +66,7 @@ export const Vietnamese = {
   order_id: 'Mã đơn hàng',
   customer_id: 'Mã khách hàng',
   total: 'Tổng tiền',
+  final_total: 'Tổng thanh toán',
   detail: 'Chi tiết',
   payment_method: 'Phương thức thanh toán',
   status: 'Trạng thái',
@@ -103,6 +105,7 @@ export const Vietnamese = {
   refresh: 'Làm mới',
   add_image: 'Thêm hình ảnh',
   submit_your_review: 'Gửi đánh giá của bạn',
+  place_order: 'Đặt hàng',
 
   // confirmation
   confirm_add_product: 'Bạn có chắc chắn muốn thêm sản phẩm này không?',
@@ -173,6 +176,8 @@ export const Vietnamese = {
   // action
   add_to_cart: 'Thêm vào giỏ hàng',
   add_to_favorite: 'Thêm vào yêu thích',
+  update_cart: 'Cập nhật giỏ hàng',
+  apply: 'Áp dụng',
 
   // Product list page: /listrow
   label_all_products: 'Tất cả sản phẩm',
