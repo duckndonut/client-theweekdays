@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product, ProductDetails } from 'src/model/product.model';
+import { CartService } from 'src/service/cart.service';
 import { FormatService } from 'src/service/format.service';
 import { ProductService } from 'src/service/product.service';
 
@@ -19,7 +20,7 @@ export class ProductDetailComponent {
   quantity: number = 1;
   recommend_products: Product[] = [];
 
-  constructor(public _productservice: ProductService, public _format: FormatService, private _activerouter: ActivatedRoute, private _router: Router, private _toastr: ToastrService ) {
+  constructor(public _productservice: ProductService, public _format: FormatService, private _activerouter: ActivatedRoute, private _router: Router, private _toastr: ToastrService, private _cartservice: CartService ) {
     this._activerouter.params.subscribe(params => {
       this.product_id = params['id'];
       if (this.product_id == null || this.product_id == undefined || this.product_id == '') {
@@ -85,5 +86,10 @@ export class ProductDetailComponent {
   reset() {
     this.selected_variant = 'S';
     this.quantity = 1;
+  }
+
+  addToCart(product_id: string, selected_variant: string, quantity: number, event: any) {
+    this._productservice.addToCart(product_id, selected_variant, quantity, event);
+    this._cartservice.getProductsInCartLocal();
   }
 }

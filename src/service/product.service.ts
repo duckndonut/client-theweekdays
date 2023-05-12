@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { Product, ProductDetails } from 'src/model/product.model';
 import { FormatService } from './format.service';
+import { CartService } from './cart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -62,7 +63,7 @@ export class ProductService {
   //   "quantity": 3
   // }
   // add product to cart local storage
-  addToCart(product_id: string, selectedVariant: string, quantity: number, event: MouseEvent) {
+  addToCart(product_id: string, selectedVariant: string, quantity: number, event: any) {
     event.stopPropagation();
     let cart: any[] = [];
     selectedVariant = selectedVariant.toUpperCase();
@@ -94,7 +95,8 @@ export class ProductService {
       "variants": selectedVariant,
       "quantity": quantity
     }
-    cart.push(product);
+    // push product to first index of cart
+    cart.unshift(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     this._toastr.success(this.ui.success_added_to_cart, this.ui.success_add);
     return;

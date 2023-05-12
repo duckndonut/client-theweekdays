@@ -122,7 +122,7 @@
             </div>
             <div class="col-lg-5 col-md-6">
               <div class="btn_add_to_cart"><a
-                  (click)="_productservice.addToCart(product._id, selected_variant, quantity, $event)"
+                  (click)="addToCart(product._id, selected_variant, quantity, $event)"
                   class="btn_1">{{ui.add_to_cart}}</a></div>
             </div>
           </div>
@@ -371,7 +371,7 @@
                     class="ti-heart"></i><span>{{ui.placeholder_add_to_favorite}}</span></a></li>
               <!-- <li><a href="#0" class="tooltip-1" data-toggle="tooltip" data-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li> -->
               <li>
-                <a (click)="_productservice.addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1"
+                <a (click)="addToCart(rc_product._id, 'S', 1, $event)" class="tooltip-1"
                   data-toggle="tooltip" data-placement="left" title="{{ui.add_to_cart}}">
                   <i class="ti-shopping-cart"></i>
                   <span>{{ui.add_to_cart}}</span>
