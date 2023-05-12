@@ -14,6 +14,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { LookbookComponent } from './lookbook/lookbook.component';
 import { AccountComponent } from './account/account.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -26,10 +29,13 @@ const routes: Routes = [
   { path: "order", component: TrackingOrderComponent},
   { path: "order/id", component: OrderDetailComponent}, // khi đổ dữ liệu về thì chuyển thành order/:id
   { path: "collection", component: CollectionComponent },
-  {path: "aboutus", component: AboutUsComponent},
+  { path: "aboutus", component: AboutUsComponent},
   { path: "collection/:id", component:CollectionDetailComponent},
   { path: "lookbook", component: LookbookComponent },
-  { path: "account", component: AccountComponent}
+  { path: "account", component: AccountComponent},
+  { path: "wishlist", component: WishlistComponent},
+  {path: "blog" , component:BlogComponent},
+  { path: "blogs", component:BlogsComponent }
 ];
 
 @NgModule({
