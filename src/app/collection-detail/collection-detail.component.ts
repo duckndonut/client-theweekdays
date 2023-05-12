@@ -25,15 +25,10 @@ export class CollectionDetailComponent {
     this._service.getCollectionById(this.id).subscribe(
       (data: any) => {
         this.collection = data;
-        this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + data.videoId + '?rel=0&playlist=' + data.videoId + '&loop=1&version=3&autoplay=1&controls=0&&showinfo=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&mute=1');
+        this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + data.videoId + '?rel=0&playlist=' + data.videoId + '&loop=1&version=3&autoplay=1&controls=0&&showinfo=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&mute=1&start=5&end=20');
       },
       (error) => {
         console.log(error);
-      }
-    );
-    this.productService.getAllProducts().subscribe(
-      (data: any) => {
-        this.listProducts = data.slice(0, 5);
       }
     );
   }
